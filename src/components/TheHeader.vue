@@ -10,24 +10,50 @@
         <a href="#contato">Contato</a>
       </nav>
    </div>
-  </header>
+   <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>  
+  </header>  
 </template>
 
 <script>
 
 export default {
-  name: "TheHeader"
+  name: "TheHeader",
+  data(){
+    return{
+     
+    }
+ },
+methods:{
+  progressBar() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+},
+created () {
+    window.addEventListener('scroll', this.progressBar);
+  },
+unmounted () {
+  window.removeEventListener('scroll', this.progressBar);
+}
 }
 </script>
 
 <style lang="scss" scoped>
 header { 
-  padding: 10px 20px;  
+  padding: 10px 0 0 0;  
   position: fixed;
   width: 100%;
   background: #fff;
   z-index: 10;
-  border-bottom: 1px solid #ccc;
+  //border-bottom: 1px solid #ccc;  
+
+  .logo{
+    opacity: 0;
+  }
 
   .container{
     display: flex;
@@ -57,5 +83,18 @@ header {
       }
     }  
   }  
+
+  .progress-container {
+    width: 100%;
+    height: 2px;
+    background: #f3f4f9;
+  }
+
+  .progress-bar {
+    height: 2px;
+    background: #156ed3;
+    width: 0%;
+    transition: all .1s;
+  }
 }
 </style>

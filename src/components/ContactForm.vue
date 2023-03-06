@@ -64,6 +64,12 @@ export default{
 
 <style lang="scss" scoped>
 
+#contato{
+  background: #001132;
+  color: #fff;
+  padding: 100px 0;
+}
+
 form {
   display: flex;
   flex-wrap: wrap;

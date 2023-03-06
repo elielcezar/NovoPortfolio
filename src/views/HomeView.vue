@@ -113,12 +113,6 @@ section{
   padding: 0;  
 }
 
-#clientes{
-  padding: 40px 0 60px 0;
-  background: #f5f5f5;
-  text-align: center;
-  margin: 100px 0;
-}
 
   
 </style>

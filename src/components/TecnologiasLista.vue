@@ -1,15 +1,19 @@
 <template>
     <section id="tecnologias">
     <div class="container">
+      
       <div class="col-1" data-aos="fade-right">
-        <h3>Especialidades</h3>
-        <p>Para criar sites como os que você vê aqui, eu utilizo as seguintes linguagens, plataformas e frameworks como ferramentas no meu dia-a-dia como <strong>desenvolvedor front-end</strong>.</p>
+        <h3>{{ title }}</h3>
+        <div v-html="body"></div>
       </div>
-      <div class="col-2" data-aos="fade-left">
-        <div class="logos">
-          <div class="item" v-for="tecnologia in tecnologias" :key="tecnologia.nid">
-              <img :src="tecnologia.field_image" alt="">            
-          </div>
+
+      <div class="col-2" data-aos="fade-left">        
+        <div class="logos">          
+
+          <div class="item" v-for="logo in logos" :key="logo">
+              <img :src="logo" alt="">            
+          </div>   
+
         </div>  
       </div>
     </div>
@@ -26,13 +30,16 @@ export default {
   },
   data(){
     return{
-        tecnologias: null
+      body: null,
+      logos: null
     }
  },
  methods: {
   getTecnologias(){
-    axios.get('https://eliel.dev/admin/web/api/tecnologias').then(response => {      
-      this.tecnologias = response.data;
+    axios.get('https://eliel.dev/admin/web/api/pagina/43').then(response => {      
+      this.title = response.data[0].title;
+      this.body = response.data[0].body;      
+      this.logos = response.data[0].field_imagens.split(",");      
     });
   }
  },
@@ -45,6 +52,7 @@ export default {
 <style lang="scss" scoped>
 
 #tecnologias{
+  margin-bottom: 0;
   .container{
     display: flex;
 

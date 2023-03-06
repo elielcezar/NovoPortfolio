@@ -1,21 +1,20 @@
 <template>
   <section id="clientes">     
     <div class="container">
-      <h3>Clientes / Parceiros</h3>
-      <p>Nos últimos anos tive a oportunidade de trabalhar com grandes marcas como:</p>
+      <h3>{{ title }}</h3>
+      <div v-html="body"></div>
       <carousel 
-        v-if="clientes.length"       
+        v-if="logos.length"       
         :navigationEnabled="true"       
         :perPageCustom="[[0, 1], [460, 2], [768, 4]]" 
         :paginationEnabled="true" 
         :scrollPerPage="true">
 
-        <slide v-for="cliente in clientes" :key="cliente.nid">                  
-            <img :src="cliente.field_image" alt="">            
+        <slide v-for="logo in logos" :key="logo">                  
+            <img :src="logo" alt="">            
         </slide>
         
-      </carousel>
-
+      </carousel>      
     </div>
   </section>
   
@@ -26,25 +25,33 @@
 import axios from "axios";
 import { Carousel, Slide } from 'vue-carousel';
 
+import { randomId } from '@/custom/scripts';
+
 export default {  
   components: {   
     Carousel,
-    Slide
+    Slide,    
   },
   data(){
     return{
+      title: null,
+      body: null,
+      logos: null,
       settings: {          
           arrows: true,
           dots: true,
         },
-      clientes: null
     }
  },
  methods: {
   getClientes(){
-    axios.get('https://eliel.dev/admin/web/api/clientes').then(response => {      
-      this.clientes = response.data;
+    axios.get('https://eliel.dev/admin/web/api/pagina/44').then(response => {      
+      this.title = response.data[0].title;
+      this.body = response.data[0].body;
+      this.logos = response.data[0].field_imagens.split(",");
+      console.log(this.logos);
     });
+    
   },
   onInitCarousel() {
         console.log('our carousel is ready')
@@ -52,15 +59,23 @@ export default {
  },
  created(){
   this.getClientes();  
- }
+ },
+ mounted() {
+  randomId()
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 
+
 #clientes{
+  padding: 40px 0 60px 0;
+  text-align: center;
+  margin: 100px 0;
   width: 100%;  
-  padding: 50px;
+  padding: 50px;  
+  background: #f3f4f9;
 
   .VueCarousel{
     img{
