@@ -11,9 +11,9 @@
 
     <PortfolioLista />
 
-    <section id="sobre">      
-      <TecnologiasLista /> 
+    <section id="sobre">            
       <ClientesLista />   
+      <TecnologiasLista /> 
     </section> 
 
     <ContactForm />
@@ -73,7 +73,8 @@ section{
 }
 
 #top{
-  padding: 180px 0 50px 0;
+  padding: 180px 0 0 0;
+  margin-bottom: 25px;
 
   @media(orientation:portrait){
     padding: 170px 7% 0 7%;
@@ -109,14 +110,14 @@ section{
 }
 
 #sobre{
-  padding: 0;
+  padding: 0;  
 }
 
 #clientes{
   padding: 40px 0 60px 0;
   background: #f5f5f5;
   text-align: center;
-  margin: 50px 0;
+  margin: 100px 0;
 }
 
   

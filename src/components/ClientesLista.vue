@@ -1,7 +1,8 @@
 <template>
   <section id="clientes">     
     <div class="container">
-      <p>Já tive a oportunidade de trabalhar com grandes marcas como:</p>
+      <h3>Clientes / Parceiros</h3>
+      <p>Nos últimos anos tive a oportunidade de trabalhar com grandes marcas como:</p>
       <carousel 
         v-if="clientes.length"       
         :navigationEnabled="true"       
@@ -58,8 +59,7 @@ export default {
 <style lang="scss" scoped>
 
 #clientes{
-  width: 100%;
-  border: 2px solid blue;
+  width: 100%;  
   padding: 50px;
 
   .VueCarousel{

@@ -1,7 +1,7 @@
 <template>
     <div id="contato" data-aos="zoom-in">
       <div class="container">
-        <form @submit.prevent="handleSubmit">
+        <form @submit.prevent="handleSubmit" v-if="!savingSuccessful">
         <div class="form-item">
             <input type="text" v-model="name" class="form-item nome" placeholder="Nome"/>        
         </div>
@@ -16,6 +16,10 @@
         </div>
         <button class="btn enviar">Enviar</button>
     </form>
+    <div class="success" v-if="savingSuccessful"> 
+        <h3>Obrigado por entrar em ccontato!</h3>
+        <p>Sua mensagem foi enviada com sucesso e será respondida o mais rápido possível 🙂</p>
+    </div>
       </div>
     </div>
 </template>
@@ -30,7 +34,8 @@ export default{
             "name": "",
             "email": "",
             "subject": "",
-            "message": ""         
+            "message": "",
+            savingSuccessful: false
         }
     },
     methods: {
@@ -42,12 +47,13 @@ export default{
                 subject: this.subject,
                 message: this.message
             };
-            axios.post('https://eliel.dev/admin/web/webform_rest/submit?api-key=7fa7fc9df82165e39a3de9cb66a656a2', dados).then( res => {
+            axios.post('https://eliel.dev/admin/web/webform_rest/submit?api-key=22e4270419275992f36377939ac2e113', dados).then( res => {
                 console.log(res);
+                this.savingSuccessful = true
             }).catch( err => {
                 console.log(err)
             });
-            this.$router.push("/sucesso");
+            /*this.$router.push("/sucesso");*/
         }        
     },
     created(){
@@ -158,6 +164,20 @@ input[type='submit'] {
 
   &:hover {    
     color: #fff;
+  }
+}
+
+#contato{
+  .success{
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h3{
+      font-size: 2em;
+    }
   }
 }
 

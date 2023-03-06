@@ -3,7 +3,7 @@
     <div class="container">
       <div class="col-1" data-aos="fade-right">
         <h3>Especialidades</h3>
-        <p>Essas são algumas das linguagens, plataformas e frameworks de desenvolvimento que tenho utilizado no meu dia-a-dia como <strong>desenvolvedor front-end</strong>.</p>
+        <p>Para criar sites como os que você vê aqui, eu utilizo as seguintes linguagens, plataformas e frameworks como ferramentas no meu dia-a-dia como <strong>desenvolvedor front-end</strong>.</p>
       </div>
       <div class="col-2" data-aos="fade-left">
         <div class="logos">
@@ -61,6 +61,10 @@ export default {
         flex: 100%;
         margin-right: 0;
         text-align: center;
+      }
+
+      p{
+        font-size: 16px;
       }
     }
     .col-2{

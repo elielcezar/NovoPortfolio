@@ -47,42 +47,43 @@ export default {
 
 <style lang="scss" scoped>
 
-.itens { 
-  display: flex;
-  flex-wrap: wrap;
+#portfolio{
+  padding-top: 100px;
+  margin-bottom: 0;  
 
-  @media(orientation:portrait){
-    flex-direction: column;
-  }
-  .item{    
-    width: 33.3%;
-    padding: 2%;
-    text-align: left; 
-    border: 1px solid blue;
-    
-    @media(orientation:portrait){
-      width: 100%;
-      margin-bottom: 40px;
-    }
+  .container{
+    max-width: 1300px;    
 
-    h3{
-      margin: 10px 0 10px 0;
-      font-size: 1.4em;
-      line-height: 1em;
-      font-weight: 700;    
-      
-      border: 1px solid;
-    }
-    .desc{
-      border: 1px solid;
-      background: red;
-        p{
-          margin: 0;
-          background: red;     
-          border: 2px solid blue;     
-          color: #fff !important;
+    .itens { 
+      display: flex;
+      flex-wrap: wrap;      
+
+      @media(orientation:portrait){
+        flex-direction: column;
+      }
+      .item{    
+        width: 50%;
+        padding: 2%;
+        text-align: center;         
+
+        @media(orientation:portrait){
+          width: 100%;
+          margin-bottom: 40px;      
         }
-     }  
-  }
+
+        h3{
+          margin: 10px 0 10px 0;
+          font-size: 1.4em;
+          line-height: 1em;
+          font-weight: 700;          
+          text-align: left;
+        }    
+        p{
+          margin: 0;                    
+          text-align: left !important;      
+        }     
+      }
+    }
+  }  
 }
 </style>

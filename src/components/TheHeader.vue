@@ -22,12 +22,12 @@ export default {
 
 <style lang="scss" scoped>
 header { 
-  padding: 10px 20px;
-  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+  padding: 10px 20px;  
   position: fixed;
   width: 100%;
   background: #fff;
   z-index: 10;
+  border-bottom: 1px solid #ccc;
 
   .container{
     display: flex;
