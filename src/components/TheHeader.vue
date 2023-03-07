@@ -55,6 +55,7 @@ header {
   .logo{        
     padding: 15px 0 15px 15px;
     width: 180px;
+    //opacity: 0;
     img{
       max-width: 100%;      
     }

@@ -49,8 +49,7 @@ export default {
 <style lang="scss" scoped>
 
 #portfolio{
-  padding-top: 100px;
-  margin-bottom: 0;  
+  padding-top: 100px;  
 
   .container{
     max-width: 1300px;   

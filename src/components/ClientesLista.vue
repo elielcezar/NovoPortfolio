@@ -75,7 +75,7 @@ export default {
   margin: 100px 0;
   width: 100%;  
   padding: 50px;  
-  background: #f3f4f9;
+  //background: #f3f4f9;
 
   .container{
     display: flex;

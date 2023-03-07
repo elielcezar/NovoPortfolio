@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import SobreView from '../views/SobreView.vue';
 import Portfolio from '../components/PortfolioLista.vue';
 import ContactForm from '../components/ContactForm.vue';
 
@@ -12,11 +11,6 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-  },
-  {
-    path: '/sobre',
-    name: 'sobre',
-    component: SobreView,
   },
   {
     path: '/portfolio',
