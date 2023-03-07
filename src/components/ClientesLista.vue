@@ -1,20 +1,22 @@
 <template>
   <section id="clientes">     
     <div class="container">
-      <h3>{{ title }}</h3>
-      <div v-html="body"></div>
-      <carousel 
+      <div class="col-1">
+        <h3><div v-html="title"></div></h3>
+        <div v-html="body"></div>
+      </div>
+      <div class="col-2">
+        <carousel 
         v-if="logos.length"       
         :navigationEnabled="true"       
         :perPageCustom="[[0, 1], [460, 2], [768, 4]]" 
         :paginationEnabled="true" 
         :scrollPerPage="true">
-
         <slide v-for="logo in logos" :key="logo">                  
             <img :src="logo" alt="">            
-        </slide>
-        
-      </carousel>      
+        </slide>        
+      </carousel>   
+        </div>   
     </div>
   </section>
   
@@ -68,14 +70,30 @@ export default {
 
 <style lang="scss" scoped>
 
-
 #clientes{
-  padding: 40px 0 60px 0;
-  text-align: center;
+  padding: 40px 0 60px 0;  
   margin: 100px 0;
   width: 100%;  
   padding: 50px;  
   background: #f3f4f9;
+
+  .container{
+    display: flex;
+
+    .col-1{
+      width: 45%;
+      margin-right: 5%;
+      border: 1px solid;
+
+      h3{
+        margin-bottom: 0;
+      }
+    }
+    .col-2{
+      width: 50%;
+      border: 1px solid;
+    }
+  }
 
   .VueCarousel{
     img{

@@ -1,9 +1,11 @@
 <template>
   <header>
    <div class="container">
-     <router-link to="/">
-        <img src="@/assets/elielcezar.png" alt="" class="logo">
+     <div class="logo">
+      <router-link to="/">
+        <img src="@/assets/elielcezar.png" alt="eliel cezar desenvolvedor front end">
       </router-link>
+     </div>
       <nav>              
         <a href="#portfolio">Portfolio</a>        
         <a href="#sobre">Sobre</a>        
@@ -44,31 +46,29 @@ unmounted () {
 
 <style lang="scss" scoped>
 header { 
-  padding: 10px 0 0 0;  
+  padding: 0;  
   position: fixed;
   width: 100%;
   background: #fff;
-  z-index: 10;
-  //border-bottom: 1px solid #ccc;  
+  z-index: 10;  
 
-  .logo{
-    opacity: 0;
+  .logo{        
+    padding: 15px 0 15px 15px;
+    width: 180px;
+    img{
+      max-width: 100%;      
+    }
   }
 
   .container{
     display: flex;
     justify-content: space-between;  
-    align-items: center;
+    align-items: center;  
+    max-width: 98%;  
     
       @media(orientation:portrait){
         justify-content: center;
       }
-
-    img.logo{
-      @media(orientation:portrait){
-        max-width: 160px;
-      }
-    }
 
     nav{
       @media(orientation:portrait){
@@ -86,12 +86,12 @@ header {
 
   .progress-container {
     width: 100%;
-    height: 2px;
+    height: 3px;
     background: #f3f4f9;
   }
 
   .progress-bar {
-    height: 2px;
+    height: 3px;
     background: #156ed3;
     width: 0%;
     transition: all .1s;

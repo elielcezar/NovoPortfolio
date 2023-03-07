@@ -3,9 +3,16 @@
   
     <section id="top">
       <div class="container">
-        <img src="@/assets/avatar.png" alt="" class="avatar">      
-        <h2> Designer / Desenvolvedor Front End</h2>
-        <p> Olá, meu nome é <strong>Eliel</strong> e trabalho há mais de 10 anos em agências de publicidade desenvolvendo sites institucionais, blogs e lojas virtuais.</p>
+        <img src="@/assets/avatar.png" alt="" class="avatar" data-aos="zoom-in">      
+        <h2 data-aos="zoom-in"> Designer / Desenvolvedor Front End</h2>
+        <p data-aos="zoom-in"> Olá, meu nome é <strong>Eliel</strong> e trabalho há 15 anos em agências de publicidade desenvolvendo sites institucionais, blogs e lojas virtuais.</p>
+        <div class="social" data-aos="zoom-in">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-spotify"></i></a>
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>        
       </div>
     </section>
 
@@ -49,7 +56,7 @@ export default {
   },
   mounted() {
     AOS.init({
-      once: true      
+      once: false      
     })
   },
 }
@@ -57,8 +64,7 @@ export default {
 
 <style lang="scss">
 
-section{
-  text-align: center;
+section{  
   margin-bottom: 100px;
   h2 {
     text-transform: uppercase;
@@ -67,13 +73,13 @@ section{
 
 #main{
   .container{
-    max-width: 1200px;
+    max-width: 1200px;    
     margin: auto;
   }
 }
 
 #top{
-  padding: 180px 0 0 0;
+  padding: 20vh 0 0 0;
   margin-bottom: 25px;
 
   @media(orientation:portrait){
@@ -106,6 +112,14 @@ section{
 
     p{
       font-size: 1.2em;
+    }
+
+    .social{
+      padding: 50px 0;
+      i{
+        font-size: 2.25em;
+        margin: 0 10px;
+      }
     }
 }
 

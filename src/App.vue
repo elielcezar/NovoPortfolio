@@ -53,7 +53,8 @@ section{
     padding: 7%;    
   }
   h3{
-    font-size: 3.25em;
+    font-size: 4.25em;
+    line-height: 1em;
     letter-spacing: -1px;
     font-weight: 700;
     margin-bottom: 50px;

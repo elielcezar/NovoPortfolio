@@ -3,14 +3,16 @@
     <div class="container">
       <h3>Portfolio</h3>    
       <div class="itens">
-        <div v-for="portfolio in portfolios" :key="portfolio.nid" class="item" data-aos="zoom-in">      
-        <a :href="portfolio.field_link" target="_blank">
-          <img :src="portfolio.field_image" alt="">
-        </a>
-        <a :href="portfolio.field_link" target="_blank">
-          <h3>{{portfolio.title}}</h3>     
-        </a>
-        <div class="desc" v-html="portfolio.body"></div>
+        <div v-for="portfolio in portfolios" :key="portfolio.nid" class="item">      
+        <div class="print" data-aos="zoom-in">
+          <a :href="portfolio.field_link" target="_blank">
+            <img :src="portfolio.field_image" alt="">
+          </a>
+        </div>
+        <h3 data-aos="zoom-in">
+          <a :href="portfolio.field_link" target="_blank">{{portfolio.title}}</a>
+        </h3>     
+        <div class="about" v-html="portfolio.body" data-aos="zoom-in"></div>
       </div>
       </div>
     </div>
@@ -20,7 +22,6 @@
 <script>
 
 //import { api } from "@/services.js";
-
 import axios from "axios";
 
 export default {
@@ -52,7 +53,11 @@ export default {
   margin-bottom: 0;  
 
   .container{
-    max-width: 1300px;    
+    max-width: 1300px;   
+    
+    h3{
+      margin: 0 0 60px 20px;      
+    }
 
     .itens { 
       display: flex;
@@ -63,25 +68,42 @@ export default {
       }
       .item{    
         width: 50%;
-        padding: 2%;
-        text-align: center;         
+        padding: 2%;          
 
         @media(orientation:portrait){
           width: 100%;
           margin-bottom: 40px;      
         }
-
+        .print{
+          text-align: center;
+        }
         h3{
-          margin: 10px 0 10px 0;
-          font-size: 1.4em;
+          margin: 10px 0 0 0;
+          font-size: 1.75em;
           line-height: 1em;
           font-weight: 700;          
           text-align: left;
-        }    
-        p{
-          margin: 0;                    
-          text-align: left !important;      
-        }     
+        } 
+        .about{
+          text-align: left;          
+          /*p{
+            margin-top: 0 !important;
+            border: 1px solid blue !important;
+            line-height: 16px !important;
+            display: inline-block;
+          }*/
+        }
+        
+        &:nth-child(odd){
+          img{
+            margin-top: -30px;
+          }
+        }
+        &:nth-child(even){
+          img{
+            margin-top: 30px;
+          }
+        }
       }
     }
   }  
