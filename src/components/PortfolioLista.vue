@@ -12,7 +12,9 @@
         <h3 data-aos="zoom-in">
           <a :href="portfolio.field_link" target="_blank">{{portfolio.title}}</a>
         </h3>     
-        <div class="about" v-html="portfolio.body" data-aos="zoom-in"></div>
+        <div class="desc" data-aos="zoom-in">
+          <p v-html="portfolio.body" ></p>
+        </div>
       </div>
       </div>
     </div>
@@ -82,15 +84,14 @@ export default {
           line-height: 1em;
           font-weight: 700;          
           text-align: left;
-        } 
-        .about{
+        }         
+        .desc{
           text-align: left;          
-          /*p{
-            margin-top: 0 !important;
-            border: 1px solid blue !important;
-            line-height: 16px !important;
-            display: inline-block;
-          }*/
+          
+          p{
+            margin: 0;            
+            line-height: 0em;                      
+          }
         }
         
         &:nth-child(odd){

@@ -2,18 +2,18 @@
     <section id="tecnologias">
     <div class="container">
       
-      <div class="col-1" data-aos="fade-right">
+      <div class="row row-1" data-aos="fade-right">
         <h3>{{ title }}</h3>
-        <div v-html="body"></div>
+        <div class="desc">
+          <p v-html="body"></p>
+        </div>
       </div>
 
-      <div class="col-2" data-aos="fade-left">        
-        <div class="logos">          
-
+      <div class="row row-2" data-aos="fade-left">        
+        <div class="logos">
           <div class="item" v-for="logo in logos" :key="logo">
               <img :src="logo" alt="">            
           </div>   
-
         </div>  
       </div>
     </div>
@@ -54,21 +54,54 @@ export default {
 #tecnologias{
   margin-bottom: 0;
   .container{
-    display: flex;
+    max-width: 1000px;
+    
+    .row{
+      width: 100%;
+      text-align: center;
+      
+      &.row-1{
+        h3{
+          margin-bottom: 20px;          
+        }
+        .desc{
+          max-width: 500px;
+          margin: auto;
+        }
+      }
 
-    @media(orientation:portrait){
-      flex-direction: column;
+      &.row-2{ 
+        .logos{
+          margin-top: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+
+          img{
+            max-width: 80px;
+            max-height: 45px;             
+          }
+        }
+      }
     }
 
-    .col-1{
+    /*.col-1{
       flex: 45%;
       margin-right: 10%;
       text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       @media(orientation:portrait){
         flex: 100%;
         margin-right: 0;
         text-align: center;
+      }
+
+      h3{
+        margin-bottom: 20px;
       }
 
       p{
@@ -98,7 +131,7 @@ export default {
           }
         }
       }
-    }
+    }*/
   }
 }
     

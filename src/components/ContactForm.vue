@@ -3,7 +3,7 @@
       <div class="container">
         <div class="col-1">
           <h3>Vamos trabalhar juntos?</h3>
-          <p>Sempre estou disponível para trabalhar como freelancer, então traga seu projeto e vamos tira-lo do papel!</p>
+          <p>Eu sempre estou disponível para trabalhar como freelancer, então traga seu projeto e vamos tira-lo do papel!</p>
           <p><i class="fa-brands fa-square-whatsapp"></i> <span><a href="https://api.whatsapp.com/send?phone=5541999631609&amp;text=Olá, ..." class="wpp mobile" target="_blank">41 99963-1609</a></span></p>
           <p><i class="fa-solid fa-envelope"></i> <span>elielcezar@gmail.com</span></p>
           <p><i class="fas fa-map-marker-alt"></i> <span>Curitiba - Brasil</span></p>
@@ -93,14 +93,16 @@ export default{
 <style lang="scss" scoped>
 
 #contato{
-  background: $azul-escuro;
-  color: #fff;
+  background: #f5f5f5;
+  //color: #fff;
   padding: 100px 0;
   margin: 0;
-}
+  //border-top: 4px solid $roxo;
 
+  
 .container{
   display: flex;
+  max-width: 1200px;
 
   @media(orientation:portrait){
     flex-direction: column;
@@ -118,17 +120,20 @@ export default{
       margin-bottom: 25px;
     }
 
-    a{
-      color: #fff;
+    a{      
+      font-weight: bold;
+      text-decoration: underline;
     }
 
     i{
       font-size: 2em;
       font-size: 1.75em;
       margin-right: 10px;
+      color: $roxo;
 
       &.fa-square-whatsapp{
         font-size: 2em;
+        color:#00b236;
       }
     }
  
@@ -205,13 +210,14 @@ select {
   box-sizing: border-box;
   border: none;
   border-width: 1px 1px 2px 1px;
-  border-radius: 20px;
-  padding: 12px 15px;
+  border-radius: 25px;
+  padding: 15px 20px;
   margin: 0 5px;  
   font-family: 'Raleway', sans-serif;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border: 2px solid $azul-claro;
 
   @media (max-width: 767px) {
     padding: 5%;
@@ -240,9 +246,10 @@ input[type='submit'] {
   border-radius: 50px;
   width: 100%;
   background: $azul-claro;
+  transition: all .3s;
 
   &:hover {    
-    background: $roxo;
+    background: $azul-medio;
   }
 }
 
@@ -265,4 +272,5 @@ input[type='submit'] {
   }
 }
 
+}
 </style>
