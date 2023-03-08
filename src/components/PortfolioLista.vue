@@ -1,7 +1,10 @@
 <template>
   <section id="portfolio" ref="portfolio">
     <div class="container">
-      <h3>Portfolio</h3>    
+      <div class="title" data-aos="zoom-in">
+          <h3>Portfolio</h3>
+          <span>Trabalhos Recentes</span>
+      </div> 
       <div class="itens">
         <div v-for="portfolio in portfolios" :key="portfolio.nid" class="item">      
         <div class="print" data-aos="zoom-in">
@@ -9,11 +12,11 @@
             <img :src="portfolio.field_image" alt="">
           </a>
         </div>
-        <h3 data-aos="zoom-in">
+        <h3 data-aos="fade-right">
           <a :href="portfolio.field_link" target="_blank">{{portfolio.title}}</a>
         </h3>     
-        <div class="desc" data-aos="zoom-in">
-          <p v-html="portfolio.body" ></p>
+        <div class="desc" data-aos="fade-right">
+          <i class="fa-solid fa-angles-right"></i><span>{{portfolio.field_descricao}}</span>
         </div>
       </div>
       </div>
@@ -52,13 +55,9 @@ export default {
 
 #portfolio{
   padding-top: 100px;  
-
+  margin-bottom: 0;
   .container{
-    max-width: 1300px;   
-    
-    h3{
-      margin: 0 0 60px 20px;      
-    }
+    max-width: 1300px;     
 
     .itens { 
       display: flex;
@@ -73,37 +72,47 @@ export default {
 
         @media(orientation:portrait){
           width: 100%;
-          margin-bottom: 40px;      
+          margin-bottom: 60px;      
         }
         .print{
           text-align: center;
         }
         h3{
-          margin: 10px 0 0 0;
-          font-size: 1.75em;
+          margin: 10px 0 5px 0;
+          font-size: 1.5em;
           line-height: 1em;
-          font-weight: 700;          
-          text-align: left;
+          font-weight: 600;          
+          text-align: left;  
+          @media(orientation:portrait){
+            margin-top: 0;
+          }        
         }         
         .desc{
-          text-align: left;          
-          
-          p{
-            margin: 0;            
-            line-height: 0em;                      
+          text-align: left; 
+          line-height: 1em;      
+
+          i{
+            margin: 4px 10px 0 0;
+            font-size: .9em;
+            color: $azul-medio;
           }
         }
         
         &:nth-child(odd){
           img{
-            margin-top: -30px;
+            @media(orientation:landscape){
+              margin-top: -30px;
+            }
           }
         }
         &:nth-child(even){
           img{
-            margin-top: 30px;
+            @media(orientation:landscape){
+              margin-top: 30px;
+            }
           }
         }
+
       }
     }
   }  

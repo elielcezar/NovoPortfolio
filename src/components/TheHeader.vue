@@ -50,12 +50,11 @@ header {
   position: fixed;
   width: 100%;
   background: #fff;
-  z-index: 10;  
+  z-index: 10;    
 
   .logo{        
     padding: 15px 0 15px 15px;
-    width: 180px;
-    //opacity: 0;
+    width: 180px;    
     img{
       max-width: 100%;      
     }
@@ -93,7 +92,7 @@ header {
 
   .progress-bar {
     height: 3px;
-    background: #156ed3;
+    background: $azul-medio;
     width: 0%;
     transition: all .1s;
   }

@@ -2,14 +2,19 @@
     <section id="tecnologias">
     <div class="container">
       
-      <div class="row row-1" data-aos="fade-right">
-        <h3>{{ title }}</h3>
+      <div class="row row-1">
+
+        <div class="title" data-aos="zoom-in">
+            <h3>{{ title }}</h3>
+            <span>Ferramentas de Trabalho</span>
+        </div> 
         <div class="desc">
           <p v-html="body"></p>
         </div>
+
       </div>
 
-      <div class="row row-2" data-aos="fade-left">        
+      <div class="row row-2" data-aos="zoom-in">        
         <div class="logos">
           <div class="item" v-for="logo in logos" :key="logo">
               <img :src="logo" alt="">            
@@ -55,17 +60,18 @@ export default {
   margin-bottom: 0;
   .container{
     max-width: 1000px;
+
+    .title{
+      margin-bottom: 0;
+    }
     
     .row{
       width: 100%;
       text-align: center;
       
-      &.row-1{
-        h3{
-          margin-bottom: 20px;          
-        }
+      &.row-1{        
         .desc{
-          max-width: 500px;
+          max-width: 600px;
           margin: auto;
         }
       }

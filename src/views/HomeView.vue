@@ -4,14 +4,14 @@
     <section id="top">
       <div class="container">
         <img src="@/assets/avatar.png" alt="" class="avatar" data-aos="zoom-in">      
-        <h2 data-aos="zoom-in"> eliel<strong>cezar</strong></h2>
+        <h2 data-aos="zoom-in"> elielcezar</h2>
         <p data-aos="zoom-in"> Olá, meu nome é <strong>Eliel</strong> e trabalho há 15 anos como <strong>designer</strong> e <strong>desenvolvedor front end</strong></p>
         <div class="social" data-aos="zoom-in">
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-spotify"></i></a>
-          <a href=""><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-github"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/elielcezar/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://open.spotify.com/user/12186163514" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+          <a href="https://twitter.com/elielcezar" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://github.com/elielcezar" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>        
       </div>
     </section>
@@ -105,11 +105,14 @@ section{
       letter-spacing: -3px;      
       font-weight: 800;
       transition: all .3s;
-      text-shadow: 1px 1px 1px $azul-claro;
+      text-shadow: 2px 2px 2px $azul-claro;
       text-transform: none;
+      color: #333;
 
       @media(orientation:portrait){
         font-size: 2.5em;
+        text-shadow: 1px 1px 1px $azul-claro;
+        letter-spacing: -2px;  
       }
     }
 
@@ -121,8 +124,7 @@ section{
       text-shadow: none;    
     }
 
-    p{
-      font-size: 1.4em;
+    p{      
       max-width: 500px;
       margin: 20px auto 0 auto;   
     }
@@ -130,10 +132,6 @@ section{
     .social{
       padding: 50px 0;
       a{
-        &:hover{
-          color: $roxo;
-        }
-
         i{
           font-size: 2.25em;
           margin: 0 10px;

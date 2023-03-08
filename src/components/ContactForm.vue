@@ -1,11 +1,14 @@
 <template>
     <section id="contato">
-      <div class="container">
-        <div class="col-1">
-          <h3>Vamos trabalhar juntos?</h3>
+      <div class="title">
+            <h3>Contato</h3>
+            <span>Vamos Conversar?</span>
+        </div>
+      <div class="container">         
+        <div class="col-1">          
           <p>Eu sempre estou disponível para trabalhar como freelancer, então traga seu projeto e vamos tira-lo do papel!</p>
           <p><i class="fa-brands fa-square-whatsapp"></i> <span><a href="https://api.whatsapp.com/send?phone=5541999631609&amp;text=Olá, ..." class="wpp mobile" target="_blank">41 99963-1609</a></span></p>
-          <p><i class="fa-solid fa-envelope"></i> <span>elielcezar@gmail.com</span></p>
+          <p><i class="fa-solid fa-envelope"></i> <span><a href="mailto:elielcezar@gmail.com">elielcezar@gmail.com</a></span></p>
           <p><i class="fas fa-map-marker-alt"></i> <span>Curitiba - Brasil</span></p>
         </div>
         <div class="col-2">
@@ -21,10 +24,7 @@
             </div>
             <div class="form-item">        
                 <input type="email" v-model="email" class="email" placeholder="Seu email *"/>        
-            </div>
-            <!--div class="form-item">        
-                <input type="text" v-model="subject" class="form-item assunto" placeholder="Assunto"/>        
-            </div-->
+            </div>         
             <div class="form-item">        
                 <textarea v-model="message" cols="30" rows="10" placeholder="Sua mensagem *"></textarea>
             </div>            
@@ -93,12 +93,9 @@ export default{
 <style lang="scss" scoped>
 
 #contato{
-  background: #f5f5f5;
-  //color: #fff;
-  padding: 100px 0;
+  background: #f8f9fa;
+  padding: 50px 0 100px 0;
   margin: 0;
-  //border-top: 4px solid $roxo;
-
   
 .container{
   display: flex;
@@ -109,7 +106,7 @@ export default{
   }
 
   .col-1{
-    flex: 45%;
+    flex: 30%;
     margin-right: 5%;
     @media(orientation:portrait){
       flex: 100%;
@@ -118,28 +115,37 @@ export default{
 
     h3{
       margin-bottom: 25px;
+      background: -webkit-linear-gradient(315deg,$azul-medio 25%,$azul-claro);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    a{      
-      font-weight: bold;
-      text-decoration: underline;
-    }
+    p{
+      display: flex;      
+      font-weight: 400;
 
-    i{
-      font-size: 2em;
-      font-size: 1.75em;
-      margin-right: 10px;
-      color: $roxo;
-
-      &.fa-square-whatsapp{
-        font-size: 2em;
-        color:#00b236;
+      span{
+        display: inline-block;
+        min-height: 30px;        
+        display: flex;
+        align-items: center;
+        max-width: 80%;
       }
-    }
+
+      i{        
+        font-size: 1.5em;
+        margin-right: 10px;
+        
+        &.fa-square-whatsapp{
+          font-size: 1.75em;
+          color:#00b236;
+        }
+      }
+    }    
  
   }
   .col-2{
-    flex: 45%;
+    flex: 60%;
     margin-left: 5%;
 
     @media(orientation:portrait){
@@ -194,35 +200,35 @@ form {
       background: #000;
     }
   }
-}
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='tel'],
-textarea,
-select {
-  width: 100%;
-  background: #fafafa;
-  margin-bottom: 10px;
-  font-size: 16px;
-  outline: none !important;
-  box-sizing: border-box;
-  border: none;
-  border-width: 1px 1px 2px 1px;
-  border-radius: 25px;
-  padding: 15px 20px;
-  margin: 0 5px;  
-  font-family: 'Raleway', sans-serif;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 2px solid $azul-claro;
-
-  @media (max-width: 767px) {
-    padding: 5%;
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='tel'],
+  textarea,
+  select {
     width: 100%;
-    margin: 0;
+    background: #fff;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none !important;
+    box-sizing: border-box;
+    border: none;
+    border-width: 1px 1px 2px 1px;
+    border-radius: 25px;
+    padding: 15px 20px;
+    margin: 0 5px;  
+    font-family: 'Raleway', sans-serif;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid $azul-medio;
+
+    @media (max-width: 767px) {
+      padding: 5%;
+      width: 100%;
+      margin: 0;
+    }
   }
 }
 
@@ -249,7 +255,7 @@ input[type='submit'] {
   transition: all .3s;
 
   &:hover {    
-    background: $azul-medio;
+    background: $azul-escuro;
   }
 }
 
@@ -265,6 +271,7 @@ input[type='submit'] {
     background: #fff;
     border-radius: 5px;
     padding: 25px;
+    border: 2px solid $azul-medio;
 
     h3{
       font-size: 2em;
