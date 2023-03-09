@@ -28,7 +28,7 @@
             <div class="form-item">        
                 <textarea v-model="message" cols="30" rows="10" placeholder="Sua mensagem *"></textarea>
             </div>            
-            <button class="btn enviar">Enviar <i class="fa-solid fa-right-long"></i></button>
+            <button class="btn enviar">Enviar <i class="fa-solid fa-paper-plane"></i></button>
         </form>
         <div class="success" v-if="savingSuccessful"> 
             <h3>Obrigado por entrar em contato!</h3>
@@ -259,24 +259,12 @@ input[type='submit'] {
   }
 }
 
-#contato{
-  .success{
-    min-height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    color: #333;
-    background: #fff;
-    border-radius: 5px;
-    padding: 25px;
-    border: 2px solid $azul-medio;
-
-    h3{
-      font-size: 2em;
-    }
-  }
+.success{
+  text-align: center;
+  background: #fff;
+  border: 2px solid blue;
+  border-radius: 25px;
+  padding: 10%;
 }
 
 }
