@@ -1,11 +1,6 @@
 <template>
   <header>
-   <div class="container">
-     <div class="logo">
-      <router-link to="/">
-        <img src="@/assets/elielcezar.png" alt="eliel cezar desenvolvedor front end">
-      </router-link>
-     </div>
+   <div class="container">    
       <nav>              
         <a href="#portfolio">Portfolio</a>        
         <a href="#sobre">Sobre</a>        
@@ -50,15 +45,7 @@ header {
   position: fixed;
   width: 100%;
   background: #fff;
-  z-index: 10;    
-
-  .logo{        
-    padding: 15px 0 15px 15px;
-    width: 180px;    
-    img{
-      max-width: 100%;      
-    }
-  }
+  z-index: 10;      
 
   .container{
     display: flex;
@@ -71,15 +58,20 @@ header {
       }
 
     nav{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       @media(orientation:portrait){
-        display: none;
+        //display: none;
       }
       a{
         padding: 7px 15px;
         display: inline-block;
-        font-size: 14px;
+        font-size: 1em;
         text-transform: uppercase;
-        font-weight: bold;          
+        font-weight: bold; 
+        color: $preto;         
       }
     }  
   }  
@@ -92,7 +84,7 @@ header {
 
   .progress-bar {
     height: 3px;
-    background: $azul-medio;
+    background: #ccc;
     width: 0%;
     transition: all .1s;
   }

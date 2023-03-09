@@ -6,7 +6,7 @@
 
         <div class="title" data-aos="zoom-in">
             <h3>{{ title }}</h3>
-            <span>Ferramentas de Trabalho</span>
+            <span>Especialidades</span>
         </div> 
         <div class="desc">
           <p v-html="body"></p>
@@ -59,10 +59,17 @@ export default {
 #tecnologias{
   margin-bottom: 0;
   .container{
-    max-width: 1000px;
+    //max-width: 1000px;
 
     .title{
       margin-bottom: 0;
+
+      h3{
+        @media(orientation:portrait){
+          font-size: 4.5em;
+          line-height: .85em;
+        }
+      }
     }
     
     .row{
@@ -84,60 +91,23 @@ export default {
           justify-content: space-between;
           flex-wrap: wrap;
 
-          img{
-            max-width: 80px;
-            max-height: 45px;             
-          }
-        }
-      }
-    }
-
-    /*.col-1{
-      flex: 45%;
-      margin-right: 10%;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      @media(orientation:portrait){
-        flex: 100%;
-        margin-right: 0;
-        text-align: center;
-      }
-
-      h3{
-        margin-bottom: 20px;
-      }
-
-      p{
-        font-size: 16px;
-      }
-    }
-    .col-2{
-      flex: 45%;  
-      
-      @media(orientation:portrait){
-        flex: 100%;
-      }
-
-      .logos{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        
-        img{
-          max-width: 130px;
-          max-height: 50px;
-          margin: 10px 20px;
-
           @media(orientation:portrait){
-            max-width: 115px;
+            justify-content: center;
           }
+
+          .item{
+            @media(orientation:portrait){
+              margin: 4%;
+            }
+            img{
+              max-width: 80px;
+              max-height: 45px;
+            }
+          }          
         }
       }
-    }*/
+    }
+
   }
 }
     

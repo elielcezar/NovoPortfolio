@@ -33,17 +33,41 @@ section{
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: 50px;
+
+    @media(orientation:portrait){
+      justify-content: center;
+    }
+
+    &::after{
+      content: '';
+      width: 60%;
+      height: 3px;
+      display: block;
+      background: $azul-medio;        
+      position: absolute;
+      right: 0;
+      top: 52%;      
+
+      @media(orientation:portrait){
+        top: 80%;
+      }
+    }
     h3{
       margin: 0;        
-      font-size: 7em;    
+      font-size: 7em;  
+      line-height: 1em;  
       letter-spacing: -5px;
       font-weight: 800; 
       color: #fff;     
-      opacity: 0.1;
+      opacity: 0.07;
       text-transform: uppercase;
       color: #999;
+
+      @media(orientation:portrait){
+        font-size: 5em;   
+      }
     }
     span{
       display: inline-block;
@@ -53,19 +77,24 @@ section{
       font-size: 2em;
       margin: 7px 0 0 0;
       letter-spacing: -1px;  
-      line-height: 1em;      
+      line-height: 1em;  
+      text-align: center;  
       
-      &::after{
+      @media(orientation:portrait){
+        font-size: 1.7em;
+      }
+      
+      /*&::after{
         content: '';
         width: 80px;
         height: 3px;
         display: block;
         background: $azul-medio;        
         position: absolute;
-        left: 50%;
+        left: 0;
         bottom: -10px;
-        margin-left: -40px;
-      }
+        //margin-left: -40px;
+      }*/
     }
   }    
 }

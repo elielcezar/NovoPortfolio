@@ -54,8 +54,13 @@ export default {
 <style lang="scss" scoped>
 
 #portfolio{
-  padding-top: 100px;  
-  margin-bottom: 0;
+  padding-top: 100px;    
+
+  @media(orientation:portrait){
+    padding-top: 0; 
+    margin-bottom: 0; 
+  }
+  
   .container{
     max-width: 1300px;     
 
@@ -85,6 +90,7 @@ export default {
           text-align: left;  
           @media(orientation:portrait){
             margin-top: 0;
+            font-size: 1.25em;
           }        
         }         
         .desc{

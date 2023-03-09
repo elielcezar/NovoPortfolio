@@ -110,7 +110,7 @@ section{
       color: #333;
 
       @media(orientation:portrait){
-        font-size: 2.5em;
+        font-size: 3em;
         text-shadow: 1px 1px 1px $azul-claro;
         letter-spacing: -2px;  
       }
@@ -135,6 +135,10 @@ section{
         i{
           font-size: 2.25em;
           margin: 0 10px;
+
+          @media(orientation:portrait){
+            font-size: 1.5em;
+          }
         }
       }
     }

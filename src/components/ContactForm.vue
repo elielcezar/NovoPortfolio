@@ -1,10 +1,11 @@
 <template>
     <section id="contato">
-      <div class="title">
+      <div class="container">
+        <div class="title">
             <h3>Contato</h3>
             <span>Vamos Conversar?</span>
         </div>
-      <div class="container">         
+      <div class="row">         
         <div class="col-1">          
           <p>Eu sempre estou disponível para trabalhar como freelancer, então traga seu projeto e vamos tira-lo do papel!</p>
           <p><i class="fa-brands fa-square-whatsapp"></i> <span><a href="https://api.whatsapp.com/send?phone=5541999631609&amp;text=Olá, ..." class="wpp mobile" target="_blank">41 99963-1609</a></span></p>
@@ -12,12 +13,13 @@
           <p><i class="fas fa-map-marker-alt"></i> <span>Curitiba - Brasil</span></p>
         </div>
         <div class="col-2">
-          <p v-if="errors" class="erros">
-              <b>Por favor corrija os seguintes erros:</b>
-              <ul>
-                <li v-for="error in errors" :key="error">{{ error }}</li>
-              </ul>
-            </p>
+          <div v-if="errors" class="erros">
+            <p><strong>Por favor corrija os seguintes erros:</strong> </p>
+            <ul>
+              <li v-for="error in errors" :key="error">{{ error }}</li>
+            </ul>
+            
+          </div>
           <form @submit.prevent="handleSubmit" v-if="!savingSuccessful">            
             <div class="form-item">
                 <input type="text" v-model="name" class="nome" placeholder="Seu nome *"/>        
@@ -35,6 +37,7 @@
             <p>Sua mensagem foi enviada com sucesso e será respondida o mais rápido possível 🙂</p>
         </div>
         </div>
+      </div>
       </div>
     </section>
 </template>
@@ -68,6 +71,7 @@ export default{
             if(this.name && this.email && this.message){
               axios.post('https://eliel.dev/admin/web/webform_rest/submit?api-key=22e4270419275992f36377939ac2e113', dados).then( res => {
                 console.log(res);
+                this.errors = "";
                 this.savingSuccessful = true
               }).catch( err => {
                   console.log(err);                
@@ -75,15 +79,14 @@ export default{
             }else{        
               this.errors = [];      
               if(!this.name){                
-                this.errors.push("Informe o seu nome.");
+                this.errors.push("Informe o seu nome");
               }
               if(!this.email){
-                this.errors.push("Informe o seu email.");
+                this.errors.push("Informe o seu email");
               }
               if(!this.message){
-                this.errors.push("Escreva a sua mensagem.");
+                this.errors.push("Escreva a sua mensagem");
               }
-                //e.preventDefault();
             }              
           }                     
         }
@@ -97,7 +100,13 @@ export default{
   padding: 50px 0 100px 0;
   margin: 0;
   
-.container{
+  .title{
+    @media(orientation:portrait){
+      margin-bottom: 0;
+    }
+  }
+  
+.row{
   display: flex;
   max-width: 1200px;
 
@@ -110,19 +119,12 @@ export default{
     margin-right: 5%;
     @media(orientation:portrait){
       flex: 100%;
-      margin: 0;
-    }
-
-    h3{
-      margin-bottom: 25px;
-      background: -webkit-linear-gradient(315deg,$azul-medio 25%,$azul-claro);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      margin: 0 0 20px 0;
     }
 
     p{
       display: flex;      
-      font-weight: 400;
+      font-weight: 400;      
 
       span{
         display: inline-block;
@@ -152,14 +154,25 @@ export default{
       flex: 100%;
       margin: 0;
     }
+
+   .form-item:nth-child(1),
+   .form-item:nth-child(2),
+   .form-item:nth-child(3){
+      margin: 0 0 20px 0;
+      width: 100%;      
+   }
   }
 }
 
-.erros{
-    border: 1px solid #fff;
-    width: 98%;
-    padding: 2% 4%;
-    margin: 0 0 20px 2%;    
+.erros{    
+    width: 98%;    
+    margin: 0 0 20px 2%;
+    
+    p{      
+        color: red;
+        margin-bottom: 5px;   
+        margin-top: 0;   
+    }
 
     ul{
       list-style-type:square;
@@ -222,7 +235,12 @@ form {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border: 2px solid $azul-medio;
+    border: 2px solid #ccc;
+    transition: all .3s;
+
+    &:focus{
+      border-color: $azul-medio;
+    }
 
     @media (max-width: 767px) {
       padding: 5%;
@@ -262,7 +280,7 @@ input[type='submit'] {
 .success{
   text-align: center;
   background: #fff;
-  border: 2px solid blue;
+  border: 2px solid $azul-medio;
   border-radius: 25px;
   padding: 10%;
 }
