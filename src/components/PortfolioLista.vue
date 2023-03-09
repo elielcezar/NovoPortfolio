@@ -13,10 +13,10 @@
           </a>
         </div>
         <h3 data-aos="fade-right">
-          <a :href="portfolio.field_link" target="_blank">{{portfolio.title}}</a>
+          <i class="fa-solid fa-angles-right"></i><a :href="portfolio.field_link" target="_blank">{{portfolio.title}}</a>
         </h3>     
         <div class="desc" data-aos="fade-right">
-          <i class="fa-solid fa-angles-right"></i><span>{{portfolio.field_descricao}}</span>
+          <span>{{portfolio.field_descricao}}</span>
         </div>
       </div>
       </div>
@@ -73,7 +73,7 @@ export default {
       }
       .item{    
         width: 50%;
-        padding: 2%;          
+        padding: 2% 4%;          
 
         @media(orientation:portrait){
           width: 100%;
@@ -89,19 +89,19 @@ export default {
           font-weight: 600;          
           text-align: left;  
           @media(orientation:portrait){
-            margin-top: 0;
+            margin-top: 5px;
             font-size: 1.25em;
-          }        
-        }         
-        .desc{
-          text-align: left; 
-          line-height: 1em;      
-
+          }
+          
           i{
-            margin: 4px 10px 0 0;
+            margin: 4px 5px 0 0;
             font-size: .9em;
             color: $azul-medio;
           }
+        }         
+        .desc{
+          text-align: left; 
+          line-height: 1em;                
         }
         
         &:nth-child(odd){

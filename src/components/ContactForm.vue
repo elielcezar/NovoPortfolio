@@ -7,7 +7,7 @@
         </div>
       <div class="row">         
         <div class="col-1">          
-          <p>Eu sempre estou disponível para trabalhar como freelancer, então traga seu projeto e vamos tira-lo do papel!</p>
+          <p class="convite">Eu sempre estou disponível para trabalhar como freelancer, então traga seu projeto e vamos tira-lo do papel!</p>
           <p><i class="fa-brands fa-square-whatsapp"></i> <span><a href="https://api.whatsapp.com/send?phone=5541999631609&amp;text=Olá, ..." class="wpp mobile" target="_blank">41 99963-1609</a></span></p>
           <p><i class="fa-solid fa-envelope"></i> <span><a href="mailto:elielcezar@gmail.com">elielcezar@gmail.com</a></span></p>
           <p><i class="fas fa-map-marker-alt"></i> <span>Curitiba - Brasil</span></p>
@@ -95,16 +95,10 @@ export default{
 
 <style lang="scss" scoped>
 
-#contato{
-  background: #f8f9fa;
-  padding: 50px 0 100px 0;
+#contato{  
+  background: -webkit-linear-gradient(45deg,#fff 25%,#f5f5f5);
+  padding: 100px 0;
   margin: 0;
-  
-  .title{
-    @media(orientation:portrait){
-      margin-bottom: 0;
-    }
-  }
   
 .row{
   display: flex;
@@ -142,8 +136,11 @@ export default{
           font-size: 1.75em;
           color:#00b236;
         }
-      }
-    }    
+      }      
+    } 
+    p.convite{
+      margin-bottom: 40px;
+    }
  
   }
   .col-2{
@@ -180,103 +177,6 @@ export default{
       font-weight: 300;
     }
   }
-
-form {
-  display: flex;
-  flex-wrap: wrap;
-
-  input{
-    width: 100%;
-  }
-
-  .form-item:nth-child(1) {
-    width: 48%;
-    margin: 0 2% 15px 0;
-  }
-
-  .form-item:nth-child(2) {
-    width: 48%;
-    margin: 0 0 20px 2%;
-  }
-  .form-item:nth-child(3) {
-    width: 100%;
-    margin: 20px 0;
-  }
-  .form-item.textarea {
-    width: 100%;
-    margin: 0 0 0 0;
-  }
-
-  input[type="submit"] {    
-
-    &:hover {
-      background: #000;
-    }
-  }
-
-  input[type='text'],
-  input[type='email'],
-  input[type='password'],
-  input[type='tel'],
-  textarea,
-  select {
-    width: 100%;
-    background: #fff;
-    margin-bottom: 10px;
-    font-size: 16px;
-    outline: none !important;
-    box-sizing: border-box;
-    border: none;
-    border-width: 1px 1px 2px 1px;
-    border-radius: 25px;
-    padding: 15px 20px;
-    margin: 0 5px;  
-    font-family: 'Raleway', sans-serif;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 2px solid #ccc;
-    transition: all .3s;
-
-    &:focus{
-      border-color: $azul-medio;
-    }
-
-    @media (max-width: 767px) {
-      padding: 5%;
-      width: 100%;
-      margin: 0;
-    }
-  }
-}
-
-button,
-input[type='submit'] {
-  color: #fff;  
-  padding: 15px 30px;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 800;
-  outline: none !important;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  font-family: 'Raleway', sans-serif;
-  font-size: 18px;
-  border-radius: 50px;
-  width: 100%;
-  background: $azul-claro;
-  transition: all .3s;
-
-  &:hover {    
-    background: $azul-escuro;
-  }
-}
-
 .success{
   text-align: center;
   background: #fff;

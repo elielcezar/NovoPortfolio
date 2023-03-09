@@ -74,11 +74,11 @@ export default {
     
     .row{
       width: 100%;
-      text-align: center;
+      //text-align: center;
       
       &.row-1{        
         .desc{
-          max-width: 600px;
+          max-width: 100%;
           margin: auto;
         }
       }

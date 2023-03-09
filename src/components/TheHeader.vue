@@ -66,7 +66,7 @@ header {
         //display: none;
       }
       a{
-        padding: 7px 15px;
+        padding: 10px 15px;
         display: inline-block;
         font-size: 1em;
         text-transform: uppercase;
@@ -83,8 +83,10 @@ header {
   }
 
   .progress-bar {
-    height: 3px;
-    background: #ccc;
+    height: 2px;
+    //background: #ccc;
+    //background: $azul-medio;
+    background: -webkit-linear-gradient(315deg,#42aad3  25%,#647eff82);    
     width: 0%;
     transition: all .1s;
   }

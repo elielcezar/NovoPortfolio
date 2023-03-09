@@ -98,6 +98,7 @@ section{
         max-width: 125px;
       }
     }
+    
 
     h2{
       font-size: 5em;
