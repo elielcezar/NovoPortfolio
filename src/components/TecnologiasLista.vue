@@ -57,7 +57,7 @@ export default {
 <style lang="scss" scoped>
 
 #tecnologias{
-  margin-bottom: 0;
+  margin-bottom: 100px;
   .container{
     //max-width: 1000px;
 

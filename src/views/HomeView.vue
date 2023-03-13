@@ -5,7 +5,7 @@
       <div class="container">
         <img src="@/assets/avatar.png" alt="" class="avatar" data-aos="zoom-in">      
         <h2 data-aos="zoom-in"> elielcezar</h2>
-        <p data-aos="zoom-in"> Olá, meu nome é <strong>Eliel</strong> e trabalho há 15 anos como <strong>designer</strong> e <strong>desenvolvedor front end</strong></p>
+        <p data-aos="zoom-in"> Olá, meu nome é <strong>Eliel</strong> e trabalho há 15 anos criando <strong>sites</strong>, <strong>lojas virtuais</strong> e outros <strong>materiais gráficos</strong> para clientes de todos os tamanhos e áreas de atuação.</p>
         <div class="social" data-aos="zoom-in">
           <a href="https://www.instagram.com/elielcezar/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://open.spotify.com/user/12186163514" target="_blank"><i class="fa-brands fa-spotify"></i></a>
@@ -16,12 +16,36 @@
       </div>
     </section>
 
-    <PortfolioLista />
+    <section id="sobre">
+      <div class="container">
+        <div class="title" data-aos="zoom-in">
+          <h3>Sobre</h3>
+          <span>O que eu faço</span>
+        </div> 
+        <div class="row">
+          <div class="col-1">
+            <p>Sou formado em design gráfico com especialização na área de desenvolvimento web, trabalhei a maior parte dos últimos 15 anos em agências de publicidade.</p>
+            <p>Isso significa que eu posso atuar em todas as etapas de desenvolvimento do seu site ou, ainda, ajudar a desenvolver uma marca única para o seu negócio.</p>
+                   
+          </div>
+          <div class="col-2">
+            <ul>
+              <li>Programação de sites e lojas virtuais</li>
+              <li>Análise e correção de problemas em sites já existentes</li>
+              <li>Melhoria de velocidade e posicionamento nos resultados do Google</li>
+              <li>Criação de logotipos</li>
+              <li>Criação de peças gráficas em geral</li>
+            </ul>                 
+          </div>        
+        </div>
+      </div>
+    </section>
 
-    <section id="sobre">  
-      <TecnologiasLista />           
-      <!--ClientesLista /-->
-    </section> 
+    <PortfolioLista />
+    
+    <TecnologiasLista />           
+    
+    <!--ClientesLista /-->    
 
     <ContactForm />
 
@@ -146,7 +170,45 @@ section{
 }
 
 #sobre{
-  padding: 0;  
+  padding: 100px 0 0 0; 
+  
+  .row{
+    display: flex;
+
+    @media(orientation:portrait){
+      flex-direction: column-reverse;
+    }
+    .col-1{
+      width: 45%;
+      margin-right: 5%;
+
+      @media(orientation:portrait){
+        width: 100%;
+        margin: 0;
+      }
+
+      h4{
+        font-weight: 500;
+      }
+
+      ul{
+        margin: 20px 0 20px 20px;
+        list-style-type: square;
+        li{
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .col-2{
+      width: 45%;
+      margin-left: 5%;
+
+      @media(orientation:portrait){
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
 }
   
 </style>
