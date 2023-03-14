@@ -10,30 +10,25 @@
       </div>      
       <div class="col-2">
 
-        <VueSlickCarousel v-if="logos.length" :autoplay="true" :slidesToShow="2" :responsive="{breakpoint: 780, slidesToShow: 1}">
+        <div v-if="logos.length">
 
-           <template #prevArrow="arrowOption">
+        <VueSlickCarousel v-bind="settings">
+            <template #prevArrow="arrowOption">
               <div class="custom-arrow">
-                {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+                {{ arrowOption.currentSlide }}
               </div>
-            </template>
-
+            </template>            
+            <div v-for="logo in logos" :key="logo">                  
+                <img :src="logo" alt="">            
+            </div>     
             <template #nextArrow="arrowOption">
-                <div class="custom-arrow">
-                  {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
-                </div>
-              </template>
-
-          <div v-for="logo in logos" :key="logo">                  
-              <img :src="logo" alt="">            
-          </div> 
-
-          <template #customPaging="page">
-            <div class="custom-dot">
-              {{ page }}
-            </div>
-          </template>
+              <div class="custom-arrow">
+                {{ arrowOption.currentSlide }}
+              </div>
+            </template>    
         </VueSlickCarousel>
+
+      </div>
     
 
         </div>   
@@ -45,7 +40,6 @@
 <script> 
 
 import axios from "axios";
-//import { Carousel, Slide } from 'vue-carousel';
 import { randomId } from '@/custom/scripts';
 
 import VueSlickCarousel from 'vue-slick-carousel'
@@ -54,26 +48,34 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 export default {  
   components: {   
-    VueSlickCarousel,
-    //Carousel,
-    //Slide,    
+    VueSlickCarousel
   },
   data(){
     return{
       title: null,
       body: null,
       logos: null,
-      settings: {          
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        responsive: [   
+      settings: {         
+        "dots": false,        
+        "infinite": true,
+        "speed": 500,
+        "slidesToShow": 3,
+        "slidesToScroll": 1,
+        "autoplay": true,
+        "responsive": [         
           {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1              
+            "breakpoint": 600,
+            "settings": {
+              "slidesToShow": 2,
+              "slidesToScroll": 2,
+              "initialSlide": 2
+            }
+          },
+          {
+            "breakpoint": 480,
+            "settings": {
+              "slidesToShow": 1,
+              "slidesToScroll": 1
             }
           }
         ]
@@ -115,41 +117,53 @@ export default {
   .container{
     display: flex;
 
+    @media(orientation:portrait){
+        flex-direction: column;
+      }
+
     .col-1{
       width: 45%;
-      margin-right: 5%;      
+      margin-right: 5%;   
+      
+      @media(orientation:portrait){
+        width: 100%;
+        margin-right: 0;
+      }
 
       h3{
         margin-bottom: 0;
       }
     }
     .col-2{
-      width: 50%;    
+      width: 50%; 
 
-      .slick-slider{        
-
-        .slick-list{          
-          .slick-slide {            
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-        }        
+      @media(orientation:portrait){
+        width: 100%;
       }
 
-      .slick-slide > div > div{          
-          height: 20vw;
-          display: flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-      }
-
-      .slick-slider{        
-        .custom-arrow {              
-          border-radius: 50%;
+      .slick-initialized{
+        padding: 0 50px;
+        border: 1px solid;        
+        .slick-slide > div > div{                  
+            height: 20vw;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 0 10%; 
         }
-      }
-      
+        .slick-next {
+          width: 50px;
+          height: 50px;
+            right: 0;
+            background: red;
+        }
+        .slick-prev {
+          width: 50px;
+          height: 50px;
+            left: 0;
+            background: red;
+        }
+      }      
     }    
   }
 }
