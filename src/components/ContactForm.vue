@@ -30,12 +30,26 @@
             <div class="form-item">        
                 <textarea v-model="message" cols="30" rows="10" placeholder="Sua mensagem *"></textarea>
             </div>            
-            <button class="btn enviar">Enviar <i class="fa-solid fa-paper-plane"></i></button>
+
+            <div v-if="loading" class="form-item">
+              <div class="loading">
+                <span>Enviando ...</span>
+                <img src="@/assets/loading.gif" alt="">
+              </div>           
+            </div>
+            <div v-else class="form-item">
+              <button class="btn enviar">Enviar <i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+
         </form>
-        <div class="success" v-if="savingSuccessful"> 
-            <h3>Obrigado por entrar em contato!</h3>
-            <p>Sua mensagem foi enviada com sucesso e será respondida o mais rápido possível 🙂</p>
-        </div>
+        
+        
+            <div class="success" v-if="savingSuccessful"> 
+              <h3>Obrigado por entrar em contato!</h3>
+              <p>Sua mensagem foi enviada com sucesso e será respondida o mais rápido possível 🙂</p>
+          </div>
+        
+        
         </div>
       </div>
       </div>
@@ -55,7 +69,8 @@ export default{
             "message": "",
             savingSuccessful: false,
             status: null,
-            errors: ""
+            errors: "",
+            loading: false
         }
     },
     methods: {
@@ -69,10 +84,13 @@ export default{
                 message: this.message
             };
             if(this.name && this.email && this.message){
-              axios.post('https://eliel.dev/admin/web/webform_rest/submit?api-key=22e4270419275992f36377939ac2e113', dados).then( res => {
-                console.log(res);
-                this.errors = "";
-                this.savingSuccessful = true
+              this.loading = true;
+              console.log('loading...');
+              axios.post('https://eliel.dev/admin/web/webform_rest/submit?api-key=22e4270419275992f36377939ac2e113', dados).then( res => {                
+                console.log(res);                
+                this.errors = false;                
+                this.loading = false;                
+                this.savingSuccessful = true;
               }).catch( err => {
                   console.log(err);                
               });  
@@ -146,6 +164,7 @@ export default{
   .col-2{
     flex: 60%;
     margin-left: 5%;
+    position: relative;
 
     @media(orientation:portrait){
       flex: 100%;
@@ -177,6 +196,27 @@ export default{
       font-weight: 300;
     }
   }
+.loading{
+  color: #fff;  
+  padding: 15px 30px;    
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;    
+  border-radius: 50px;
+  width: 100%;
+  background: $azul-escuro; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    max-width: 20px;
+    margin: 0 0 0 10px;
+  }
+}
+
 .success{
   text-align: center;
   background: #fff;
