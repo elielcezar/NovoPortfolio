@@ -18,25 +18,25 @@
 
     <section id="sobre">
       <div class="container">
-        <div class="title" data-aos="zoom-in">
-          <h3>Sobre</h3>
-          <span>O que eu faço</span>
-        </div> 
+        
         <div class="row">
           <div class="col-1">
-            <p>Sou formado em design gráfico com especialização na área de desenvolvimento web, trabalhei a maior parte dos últimos 15 anos em agências de publicidade.</p>
-            <p>Isso significa que eu posso atuar em todas as etapas de desenvolvimento do seu site ou, ainda, ajudar a desenvolver uma marca única para o seu negócio.</p>
-                   
+              <div class="title" data-aos="fade-right">
+                <h3>Sobre</h3>
+                <span>O que eu faço</span>
+              </div>                       
           </div>
+
           <div class="col-2">
-            <ul>
-              <li>Programação de sites e lojas virtuais</li>
-              <li>Análise e correção de problemas em sites já existentes</li>
-              <li>Melhoria de velocidade e posicionamento nos resultados do Google</li>
-              <li>Criação de logotipos</li>
-              <li>Criação de peças gráficas em geral</li>
-            </ul>                 
-          </div>        
+
+            <div class="itens"  data-aos="fade-left">
+              <div class="item"><i class="fa-solid fa-code"></i><span>Programação de sites e lojas virtuais</span> </div>
+              <div class="item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Identificação e correção de problemas em sites já existentes</span></div>
+              <div class="item"><i class="fa-brands fa-searchengin"></i><span>Melhoria de velocidade e posicionamento nos resultados do Google</span> </div>
+              <div class="item"><i class="fa-brands fa-square-pied-piper"></i><span>Criação de logotipos e peças gráficas em geral</span> </div>
+            </div>             
+
+          </div> 
         </div>
       </div>
     </section>
@@ -176,36 +176,53 @@ section{
     display: flex;
 
     @media(orientation:portrait){
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
     .col-1{
-      width: 45%;
+      width: 45%;      
+      margin-right: 5%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      @media(orientation:portrait){
+        width: 100%;
+        margin: 0;
+      }    
+
+      .title{
+        width: 100%;
+        @media(orientation:landscape){
+          margin: 0;
+        }
+      }
+      
+    }
+    .col-2{
+      width: 45%;      
       margin-right: 5%;
 
       @media(orientation:portrait){
-        width: 100%;
-        margin: 0;
+        width: 100%;        
       }
 
-      h4{
-        font-weight: 500;
-      }
+      .itens{
+        display: flex;        
+        flex-wrap: wrap;
+        .item{
+          width: 100%;
+          padding: 2% 0;          
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
 
-      ul{
-        margin: 20px 0 20px 20px;
-        list-style-type: square;
-        li{
-          margin-bottom: 10px;
+          i{
+            font-size: 2.25em;
+            display: inline-block;   
+            margin-right: 20px; 
+            color: $azul-medio;                    
+          }      
         }
-      }
-    }
-    .col-2{
-      width: 45%;
-      margin-left: 5%;
-
-      @media(orientation:portrait){
-        width: 100%;
-        margin: 0;
       }
     }
   }
