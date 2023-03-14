@@ -70,8 +70,17 @@ header {
         display: inline-block;
         font-size: 1em;
         text-transform: uppercase;
-        font-weight: bold; 
-        color: $preto;         
+        font-weight: 800; 
+        color: $preto;    
+        text-shadow: 1px 1px 1px $azul-claro;     
+
+        &:hover{          
+          background: -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: all .3s;      
+          text-shadow: none;    
+        }
       }
     }  
   }  
