@@ -79,7 +79,7 @@ export default {
         }
 
         &::after{
-          width: 50%;
+          width: 44%;
         }
       }
       

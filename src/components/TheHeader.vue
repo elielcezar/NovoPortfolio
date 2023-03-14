@@ -66,7 +66,7 @@ header {
         //display: none;
       }
       a{
-        padding: 10px 15px;
+        padding: 15px;
         display: inline-block;
         font-size: 1em;
         text-transform: uppercase;

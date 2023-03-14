@@ -62,7 +62,7 @@ export default {
     .avatar{
       max-width: 200px;
       @media(orientation:portrait){
-        max-width: 125px;
+        max-width: 170px;
       }
     }
     
@@ -78,7 +78,7 @@ export default {
       color: #333;
 
       @media(orientation:portrait){
-        font-size: 3em;
+        font-size: 3.25em;
         text-shadow: 1px 1px 1px $azul-claro;
         letter-spacing: -2px;  
       }

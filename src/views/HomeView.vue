@@ -9,7 +9,7 @@
     
     <TecnologiasLista />           
     
-    <!--ClientesLista /-->    
+    <ClientesLista />
 
     <ContactForm />
 
@@ -25,7 +25,7 @@ import BlockTop from "@/components/BlockTop.vue";
 import BlockServicos from "@/components/BlockServicos.vue";
 import PortfolioLista from "@/components/PortfolioLista.vue";
 import TecnologiasLista from "@/components/TecnologiasLista.vue";
-//import ClientesLista from "@/components/ClientesLista.vue";
+import ClientesLista from "@/components/ClientesLista.vue";
 import ContactForm from "@/components/ContactForm.vue";
 
 export default {
@@ -34,7 +34,7 @@ export default {
     BlockTop,
     BlockServicos,
     PortfolioLista,
-    //ClientesLista,
+    ClientesLista,
     TecnologiasLista,
     ContactForm
   },

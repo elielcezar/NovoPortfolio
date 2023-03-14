@@ -4,18 +4,35 @@
       <div class="col-1">
         <h3><div v-html="title"></div></h3>
         <div v-html="body"></div>
-      </div>
+      </div>      
       <div class="col-2">
-        <carousel 
-        v-if="logos.length"       
-        :navigationEnabled="true"       
-        :perPageCustom="[[0, 1], [460, 2], [768, 4]]" 
-        :paginationEnabled="true" 
-        :scrollPerPage="true">
-        <slide v-for="logo in logos" :key="logo">                  
-            <img :src="logo" alt="">            
-        </slide>        
-      </carousel>   
+
+        <VueSlickCarousel v-if="logos.length">
+
+           <template #prevArrow="arrowOption">
+              <div class="custom-arrow">
+                {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+              </div>
+            </template>
+
+            <template #nextArrow="arrowOption">
+                <div class="custom-arrow">
+                  {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+                </div>
+              </template>
+
+          <div v-for="logo in logos" :key="logo">                  
+              <img :src="logo" alt="">            
+          </div> 
+
+          <template #customPaging="page">
+            <div class="custom-dot">
+              {{ page }}
+            </div>
+          </template>
+        </VueSlickCarousel>
+    
+
         </div>   
     </div>
   </section>
@@ -25,14 +42,18 @@
 <script> 
 
 import axios from "axios";
-import { Carousel, Slide } from 'vue-carousel';
-
+//import { Carousel, Slide } from 'vue-carousel';
 import { randomId } from '@/custom/scripts';
+
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 export default {  
   components: {   
-    Carousel,
-    Slide,    
+    VueSlickCarousel,
+    //Carousel,
+    //Slide,    
   },
   data(){
     return{
@@ -40,9 +61,20 @@ export default {
       body: null,
       logos: null,
       settings: {          
-          arrows: true,
-          dots: true,
-        },
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [   
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1              
+            }
+          }
+        ]
+      },
     }
  },
  methods: {
@@ -90,15 +122,37 @@ export default {
       }
     }
     .col-2{
-      width: 50%;
-      border: 1px solid;
-    }
-  }
+      width: 50%;    
 
-  .VueCarousel{
-    img{
-      max-width: 125px;
-    }
+      .slick-slider{
+        border: 5px solid red !important;
+
+        .slick-list{          
+          .slick-slide {            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }        
+      }
+
+      .slick-slide > div > div{          
+          height: 20vw;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+      }
+
+      .slick-slider{        
+        .custom-arrow {
+          border: 5px solid blue;
+          border: 1px solid blue !important;
+          background: orange;
+          border-radius: 50%;
+        }
+      }
+      
+    }    
   }
 }
 
