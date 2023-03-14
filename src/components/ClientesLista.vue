@@ -2,12 +2,15 @@
   <section id="clientes">     
     <div class="container">
       <div class="col-1">
-        <h3><div v-html="title"></div></h3>
+         <div class="title" data-aos="fade-right">
+            <h3>Clientes</h3>
+            <span>Parceiros</span>
+          </div> 
         <div v-html="body"></div>
       </div>      
       <div class="col-2">
 
-        <VueSlickCarousel v-if="logos.length">
+        <VueSlickCarousel v-if="logos.length" :autoplay="true" :slidesToShow="2" :responsive="{breakpoint: 780, slidesToShow: 1}">
 
            <template #prevArrow="arrowOption">
               <div class="custom-arrow">
@@ -114,8 +117,7 @@ export default {
 
     .col-1{
       width: 45%;
-      margin-right: 5%;
-      border: 1px solid;
+      margin-right: 5%;      
 
       h3{
         margin-bottom: 0;
@@ -124,8 +126,7 @@ export default {
     .col-2{
       width: 50%;    
 
-      .slick-slider{
-        border: 5px solid red !important;
+      .slick-slider{        
 
         .slick-list{          
           .slick-slide {            
@@ -144,10 +145,7 @@ export default {
       }
 
       .slick-slider{        
-        .custom-arrow {
-          border: 5px solid blue;
-          border: 1px solid blue !important;
-          background: orange;
+        .custom-arrow {              
           border-radius: 50%;
         }
       }
