@@ -5,11 +5,11 @@
 
     <BlockServicos />
 
+    <ClientesLista />
+
     <PortfolioLista />
     
-    <TecnologiasLista />           
-    
-    <ClientesLista />
+    <TecnologiasLista />               
 
     <ContactForm />
 

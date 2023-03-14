@@ -59,23 +59,22 @@ export default {
         "dots": false,        
         "infinite": true,
         "speed": 500,
-        "slidesToShow": 3,
+        "slidesToShow": 4,
         "slidesToScroll": 1,
         "autoplay": true,
-        "responsive": [         
-          {
-            "breakpoint": 600,
+        "responsive": [                  
+        {
+            "breakpoint": 1360,
             "settings": {
-              "slidesToShow": 2,
-              "slidesToScroll": 2,
-              "initialSlide": 2
+              "slidesToShow": 3,
+              "slidesToScroll": 1              
             }
           },
           {
             "breakpoint": 480,
             "settings": {
-              "slidesToShow": 1,
-              "slidesToScroll": 1
+              "slidesToShow": 2,
+              "slidesToScroll": 1              
             }
           }
         ]
@@ -88,7 +87,7 @@ export default {
       this.title = response.data[0].title;
       this.body = response.data[0].body;
       this.logos = response.data[0].field_imagens.split(",");
-      console.log(this.logos);
+      //console.log(this.logos);
     });
     
   },
@@ -114,6 +113,10 @@ export default {
   padding: 50px;  
   //background: #f3f4f9;
 
+  @media(orientation:portrait){
+    padding: 0;
+  }
+
   .container{
     display: flex;
 
@@ -124,6 +127,12 @@ export default {
     .col-1{
       width: 45%;
       margin-right: 5%;   
+
+      .title{
+        @media(orientation:portrait){
+          margin-bottom: 20px;
+        }
+      }
       
       @media(orientation:portrait){
         width: 100%;
@@ -142,26 +151,42 @@ export default {
       }
 
       .slick-initialized{
-        padding: 0 50px;
-        border: 1px solid;        
+        padding: 0 50px;     
+        @media(orientation:landscape){
+          margin-top: 125px;
+        }   
         .slick-slide > div > div{                  
-            height: 20vw;
+            height: 100px;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
             padding: 0 10%; 
+
+            img{
+              max-width: 100px;
+            }
         }
-        .slick-next {
-          width: 50px;
-          height: 50px;
-            right: 0;
-            background: red;
+
+        .slick-next,
+        .slick-prev{
+          width: 30px;
+          height: 30px;
+          background-repeat: no-repeat;
+          background-size: auto 100% !important;
+          background-position: center;
+          &::before{
+            display: none;
+          }
         }
-        .slick-prev {
-          width: 50px;
-          height: 50px;
-            left: 0;
-            background: red;
+
+        .slick-next {          
+          right: 0;
+          background-image: url(@/assets/arrow-right.png);
+          
+        }
+        .slick-prev {         
+          left: 0;          
+          background-image: url(@/assets/arrow-left.png);
         }
       }      
     }    
