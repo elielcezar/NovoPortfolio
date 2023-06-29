@@ -52,9 +52,11 @@ export default {
 
 <style lang="scss" scoped>
 #top{
-  padding: 20vh 0;
+  padding: 25vh 0;
   margin-bottom: 25px;
   background: $azul-petroleo;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  //border-bottom: 50px solid $azul-claro;
 
   @media(orientation:portrait){
     padding: 170px 7% 0 7%;
@@ -80,8 +82,8 @@ export default {
         text-align: left;
 
           h1{
-            font-size: 5em;
-            line-height: 1em;             
+            font-size: 4.5rem;
+            line-height: 4rem;
             letter-spacing: -3px;      
             font-weight: 800;
             transition: all .3s;            

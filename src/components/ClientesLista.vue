@@ -8,7 +8,7 @@
         </div> 
 
         <div class="row">
-          <div v-html="body"></div>        
+          <div v-html="body" class="body"></div>        
         </div>
 
         <div class="row">
@@ -74,11 +74,15 @@ export default {
   @media(orientation:portrait){
     padding: 0;
   }
-
-  .title{
-    margin-bottom: 50px;
+  
+  .body{
+    max-width: 600px;
+    margin: 45px auto 0 auto;    
   }
 
+  .title{
+    margin-bottom: 0;
+  }
   .itens{
     display: flex;
     flex-wrap: wrap;
@@ -86,14 +90,14 @@ export default {
     margin-top: 50px;
 
     .item{
-      width: 33%;      
+      width: 25%;      
       display: flex;      
       align-items: center;
       justify-content: center;
-      margin-bottom: 40px;            
+      margin: 40px 0;
 
       @media(orientation:portrait){
-          width: 100%;
+          width: 50%;
           margin-bottom: 70px;
       }
 
@@ -102,7 +106,7 @@ export default {
         max-height: 100px;
 
         @media(orientation:portrait){          
-          max-width: 50%;
+          max-width: 80%;
         }
       }
     }

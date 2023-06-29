@@ -9,12 +9,12 @@
         </div>
         <div class="row">
           <div class="col-1">
-            <div class="item"><i class="fa-solid fa-code"></i> <span><strong>Programação</strong><br/>de sites, blogs, landing pages e lojas virtuais</span> </div>
-              <div class="item"><i class="fa-solid fa-screwdriver-wrench"></i> <span><strong>correção de problemas</strong><br/> análise técnica e plano de melhorias em sites desenvolvidos por terceiros</span></div>
+            <div class="item" data-aos="fade-right"><i class="fa-solid fa-code"></i> <span><strong>Programação</strong><br/>de sites, blogs, landing pages e lojas virtuais</span> </div>
+              <div class="item" data-aos="fade-right"><i class="fa-solid fa-screwdriver-wrench"></i> <span><strong>correção de problemas</strong><br/> análise técnica e plano de melhorias em sites desenvolvidos por terceiros</span></div>
           </div>
           <div class="col-2">            
-              <div class="item"><i class="fa-brands fa-searchengin"></i><span><strong>S E O</strong><br/> melhoria de desempenho e posicionamento do seu site nos resultados do Google </span> </div>
-              <div class="item"><i class="fa-brands fa-square-pied-piper"></i><span><strong>Criação</strong><br/> de logotipos e peças gráficas em geral</span> </div>            
+              <div class="item" data-aos="fade-left"><i class="fa-brands fa-square-pied-piper"></i><span><strong>Criação</strong><br/> de logotipos e peças gráficas em geral</span> </div>            
+              <div class="item" data-aos="fade-left"><i class="fa-brands fa-searchengin"></i><span><strong>S E O</strong><br/> melhoria de desempenho e posicionamento do seu site nos resultados do Google </span> </div>              
           </div> 
         </div>
       </div>
@@ -87,8 +87,7 @@ export default {
         width: 100%;
         padding: 2% 0;          
         display: flex;
-        margin-bottom: 40px;
-        justify-content: flex-start;
+        margin-bottom: 40px;        
         align-items: center;        
         color: #fff;
         line-height: 24px;

@@ -44,7 +44,7 @@ header {
   padding: 0;  
   position: fixed;
   width: 100%;
-  background: #fff;
+  background:  $azul-petroleo;
   z-index: 10;      
 
   .container{
@@ -70,24 +70,25 @@ header {
         display: inline-block;
         font-size: 1em;
         text-transform: uppercase;
-        font-weight: 800; 
-        color: $preto;    
-      
+        font-weight: 700; 
+        color: #fff;   
+        transition: all .3s;
+        
+        &:hover{
+          color: $azul-claro;
+        }
       }
     }  
-  }  
-
+  }
   .progress-container {
     width: 100%;
-    height: 3px;
-    background: #f3f4f9;
+    height: 4px;
+    //background: #f3f4f9;
+    background: transparent;
+    border-bottom: 1px solid #fff;
   }
-
   .progress-bar {
-    height: 2px;
-    //background: #ccc;
-    //background: $azul-medio;
-    //background: -webkit-linear-gradient(315deg,#42aad3  25%,#647eff82);    
+    height: 4px;    
     background: -webkit-linear-gradient(315deg,#1f8dfa  25%,#0d54b9);    
     width: 0%;
     transition: all .1s;
