@@ -2,7 +2,7 @@
     <section id="tecnologias">
     <div class="container">
       
-      <div class="row row-1">
+      <div class="row">
 
         <div class="title" data-aos="zoom-in">
             <h3>{{ title }}</h3>
@@ -14,13 +14,34 @@
 
       </div>
 
-      <div class="row row-2" data-aos="zoom-in">        
-        <div class="logos">
-          <div class="item" v-for="logo in logos" :key="logo">
-              <img :src="logo" alt="">            
-          </div>   
-        </div>  
+      <div class="row">
+
+        <div v-if="logos.length">
+
+          <VueSlickCarousel v-bind="settings">
+                <template #prevArrow="arrowOption">
+                  <div class="custom-arrow">
+                    {{ arrowOption.currentSlide }}
+                  </div>
+                </template>            
+                <div v-for="logo in logos" :key="logo">                  
+                    <div class="item">
+                      <img :src="logo" alt="">            
+                    </div>
+                </div>     
+                <template #nextArrow="arrowOption">
+                  <div class="custom-arrow">
+                    {{ arrowOption.currentSlide }}
+                  </div>
+                </template>    
+            </VueSlickCarousel>
+
+        </div>
+
       </div>
+
+
+
     </div>
   </section>
 </template>
@@ -29,14 +50,43 @@
 
 import axios from "axios";
 
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
+
 export default {  
-  components: {
-   
+  components: {   
+    VueSlickCarousel
   },
   data(){
     return{
       body: null,
-      logos: null
+      logos: null,
+      settings: {         
+        "dots": false,        
+        "infinite": true,
+        "speed": 500,
+        "slidesToShow": 4,
+        "slidesToScroll": 3,
+        "autoplay": true,
+        "responsive": [                  
+        {
+            "breakpoint": 1360,
+            "settings": {
+              "slidesToShow": 3,
+              "slidesToScroll": 2              
+            }
+          },
+          {
+            "breakpoint": 480,
+            "settings": {
+              "slidesToShow": 2,
+              "slidesToScroll": 2              
+            }
+          }
+        ]
+      },
     }
  },
  methods: {
@@ -57,9 +107,12 @@ export default {
 <style lang="scss" scoped>
 
 #tecnologias{
-  margin-bottom: 100px;
+  padding: 100px 0;
+  background: $azul-petroleo;
+  text-align: center;
+  margin-bottom: 0;
   .container{
-    //max-width: 1000px;
+    max-width: 900px;
 
     .title{
       margin-bottom: 0;
@@ -70,6 +123,14 @@ export default {
           line-height: .85em;
         }
       }
+
+      span{
+        color: #fff;
+      }
+    }
+
+    p{
+      color: #fff;
     }
     
     .row{
@@ -81,29 +142,29 @@ export default {
           max-width: 100%;
           margin: auto;
         }
-      }
-
-      &.row-2{ 
-        .logos{
-          margin-top: 40px;
+      }  
+      
+      .slick-slider{
+        .item{          
+          height: 100%;
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          flex-wrap: wrap;
+          justify-content: center;
+          min-width: 120px;
+          padding: 15px 0;
+          text-align: center;
+          background: #f5f5f5;
+          border: 2px solid #fff;
+          border-radius: 3px;
 
           @media(orientation:portrait){
-            justify-content: center;
+            min-width: 100px;            
           }
 
-          .item{
-            @media(orientation:portrait){
-              margin: 4%;
-            }
-            img{
-              max-width: 80px;
-              max-height: 45px;
-            }
-          }          
+          img{
+            max-height: 70px;
+            max-width: 90%;
+          }
         }
       }
     }

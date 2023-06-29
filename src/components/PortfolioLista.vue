@@ -7,18 +7,18 @@
       </div> 
       <div class="itens">
         <div v-for="portfolio in portfolios" :key="portfolio.nid" class="item">      
-        <div class="print" data-aos="zoom-in">
-          <a :href="portfolio.field_link" target="_blank">
-            <img :src="portfolio.field_image" alt="">
-          </a>
+          <div class="print" data-aos="zoom-in">
+            <a :href="portfolio.field_link" target="_blank">
+              <img :src="portfolio.field_image" alt="">
+            </a>
+          </div>
+          <h3 data-aos="fade-right">
+            <i class="fa-solid fa-bookmark"></i> <a :href="portfolio.field_link" target="_blank">{{portfolio.title}}</a>
+          </h3>     
+          <div class="desc" data-aos="fade-right">
+            <span>{{portfolio.field_descricao}}</span>
+          </div>
         </div>
-        <h3 data-aos="fade-right">
-          <i class="fa-solid fa-angles-right"></i><a :href="portfolio.field_link" target="_blank">{{portfolio.title}}</a>
-        </h3>     
-        <div class="desc" data-aos="fade-right">
-          <span>{{portfolio.field_descricao}}</span>
-        </div>
-      </div>
       </div>
     </div>
   </section>
@@ -74,6 +74,7 @@ export default {
       .item{    
         width: 50%;
         padding: 2% 4%;          
+        margin-bottom: 100px;      
 
         @media(orientation:portrait){
           width: 100%;
@@ -95,7 +96,7 @@ export default {
           
           i{
             margin: 4px 5px 0 0;
-            font-size: .9em;
+            font-size: .8em;
             color: $azul-medio;
           }
         }         

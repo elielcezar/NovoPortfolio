@@ -2,6 +2,7 @@
 node_modules
 /dist
 
+/NovoPortfolio/src/views/LoginView.vue
 
 # local env files
 .env.local

@@ -72,15 +72,7 @@ header {
         text-transform: uppercase;
         font-weight: 800; 
         color: $preto;    
-        text-shadow: 1px 1px 1px $azul-claro;     
-
-        &:hover{          
-          background: -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          transition: all .3s;      
-          text-shadow: none;    
-        }
+      
       }
     }  
   }  
@@ -95,7 +87,8 @@ header {
     height: 2px;
     //background: #ccc;
     //background: $azul-medio;
-    background: -webkit-linear-gradient(315deg,#42aad3  25%,#647eff82);    
+    //background: -webkit-linear-gradient(315deg,#42aad3  25%,#647eff82);    
+    background: -webkit-linear-gradient(315deg,#1f8dfa  25%,#0d54b9);    
     width: 0%;
     transition: all .1s;
   }

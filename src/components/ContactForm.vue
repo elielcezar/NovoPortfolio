@@ -113,10 +113,13 @@ export default{
 
 <style lang="scss" scoped>
 
-#contato{  
-  background: -webkit-linear-gradient(45deg,#fff 25%,#f5f5f5);
+#contato{    
   padding: 100px 0;
   margin: 0;
+
+  .container{
+    max-width: 900px;
+  }
   
 .row{
   display: flex;
@@ -127,11 +130,11 @@ export default{
   }
 
   .col-1{
-    flex: 30%;
-    margin-right: 5%;
+    flex: 40%;
+    padding-right: 2.5%;
     @media(orientation:portrait){
       flex: 100%;
-      margin: 0 0 20px 0;
+      padding: 0 0 20px 0;
     }
 
     p{
@@ -157,18 +160,30 @@ export default{
       }      
     } 
     p.convite{
-      margin-bottom: 40px;
+      margin: 0 0 40px 0; 
     }
  
   }
   .col-2{
     flex: 60%;
-    margin-left: 5%;
+    padding-left: 2.5%;
     position: relative;
 
     @media(orientation:portrait){
       flex: 100%;
-      margin: 0;
+      padding: 0;
+    }
+
+    form{
+      .form-item{
+        text-align: center;
+
+        .btn.enviar{
+          max-width: 250px;
+          margin: auto;
+          border-radius: 50px;
+        }
+      }     
     }
 
    .form-item:nth-child(1),

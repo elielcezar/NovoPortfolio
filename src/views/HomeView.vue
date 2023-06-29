@@ -3,11 +3,11 @@
   
     <BlockTop />
 
+    <PortfolioLista />
+
     <BlockServicos />
 
-    <ClientesLista />
-
-    <PortfolioLista />
+    <ClientesLista />    
     
     <TecnologiasLista />               
 

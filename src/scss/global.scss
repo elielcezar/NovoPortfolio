@@ -33,28 +33,9 @@ section{
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 50px;
+    justify-content: center;
+    margin-bottom: 100px;
 
-    /*@media(orientation:portrait){
-      justify-content: center;
-    }*/
-
-    &::after{
-      content: '';
-      width: 60%;
-      height: 4px;
-      display: block;
-      //background: $azul-claro;    
-      background: -webkit-linear-gradient(315deg,#42aad3  25%,#647eff82);    
-      position: absolute;
-      right: 0;
-      top: 52%;      
-
-      @media(orientation:portrait){
-        top: 80%;
-      }
-    }
     h3{
       margin: 0;        
       font-size: 7em;  
@@ -79,7 +60,16 @@ section{
       margin: 7px 0 0 0;
       letter-spacing: -1px;  
       line-height: 1em;  
-      text-align: center;  
+      text-align: center; 
+      
+      &::after{
+        content: '';
+        display: block;
+        width: 50%;
+        height: 3px;
+        background: $azul-claro;
+        margin: 15px auto 0 auto;
+      }
       
       @media(orientation:portrait){
         font-size: 1.7em;
@@ -181,7 +171,7 @@ form {
     box-sizing: border-box;
     border: none;
     border-width: 1px 1px 2px 1px;
-    border-radius: 25px;
+    border-radius: 3px;
     padding: 15px 20px;
     margin: 0 5px;  
     font-family: 'Raleway', sans-serif;
@@ -220,9 +210,9 @@ input[type='submit'] {
   appearance: none;
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
-  border-radius: 50px;
+  border-radius: 3px;
   width: 100%;
-  background: $azul-claro;
+  background: $azul-medio;
   transition: all .3s;
 
   &:hover {    
@@ -253,5 +243,46 @@ section{
       max-width: 1200px;
     }
     
+  }
+}
+
+
+.slick-initialized{
+  padding: 0 50px;     
+  @media(orientation:landscape){
+    margin-top: 25px;
+  }   
+  .slick-slide > div > div{                  
+      height: 100px;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 10%; 
+
+      img{
+        max-width: 100px;
+      }
+  }
+
+  .slick-next,
+  .slick-prev{
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: auto 100% !important;
+    background-position: center;
+    &::before{
+      display: none;
+    }
+  }
+
+  .slick-next {          
+    right: 0;
+    background-image: url(@/assets/arrow-right.png);
+    
+  }
+  .slick-prev {         
+    left: 0;          
+    background-image: url(@/assets/arrow-left.png);
   }
 }
