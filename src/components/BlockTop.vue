@@ -54,7 +54,7 @@ export default {
 #top{
   padding: 25vh 0 15vh 0;
   margin-bottom: 25px;
-  background: #1b1940 url(../assets/footer-galaxy2.jpg) left top no-repeat;
+  background: #1b1940 url(../assets/footer-2.jpg) left top no-repeat;
   background-size: cover;
 
   @media(orientation:portrait){

@@ -21,6 +21,7 @@ export default {
 
 <style lang="css" scoped>
 .menuBtn {
+  display: none !important;
   height: 30px;
   width: 30px;
   position: absolute;

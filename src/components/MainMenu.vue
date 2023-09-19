@@ -30,11 +30,11 @@ export default {
         font-size: 1em;
         text-transform: uppercase;
         font-weight: 700; 
-        color: #fff;   
+        color: #fff !important;   
         transition: all .3s;
         
         &:hover{
-          color: $azul-claro;
+          color: $azul-claro !important;
         }
       }
     } 
