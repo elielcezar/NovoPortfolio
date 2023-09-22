@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 #top{
-  padding: 25vh 0 15vh 0;
+  padding: 25vh 0;
   margin-bottom: 25px;
   background: #1b1940 url(../assets/footer-2.jpg) left top no-repeat;
   background-size: cover;
@@ -67,23 +67,12 @@ export default {
 
     .row{
       display: flex;
-
-      @media(orientation:portrait){
-            flex-direction: column;
-          }
-      
       .col-1{
         width: 40%;
-
-        @media(orientation:portrait){
-            width: 100%;
-          }
         .avatar{
           max-width: 400px;
           @media(orientation:portrait){
             max-width: 170px;
-            border: 5px solid #fff;
-            border-radius: 50%;
           }
         }
       }
@@ -91,29 +80,28 @@ export default {
         width: 60%;
         text-align: left;
 
-        @media(orientation:portrait){
-            width: 100%;
-          }
-
           h1{
-            font-size: 4em;
-            line-height: 4rem;            
+            font-size: 4.5rem;
+            line-height: 4rem;
+            letter-spacing: -3px;      
             font-weight: 800;
             transition: all .3s;            
             text-transform: none;
             color: #fff;
-            margin-top: 25px;            
-            cursor: grabbing;
 
             @media(orientation:portrait){
-              font-size: 2.7rem;
-              line-height: 3rem;
+              font-size: 3.25em;
+              text-shadow: 1px 1px 1px $azul-claro;
+              letter-spacing: -2px;  
             }
 
             
-          &:hover{            
-            color: $azul-petroleo;            
-            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+          &:hover{
+            background: -webkit-linear-gradient(315deg,#4c9fff 25%,#00276e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all .3s;      
+            text-shadow: none;    
           }
           }
           p{                  
