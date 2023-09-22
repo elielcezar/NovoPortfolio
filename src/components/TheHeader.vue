@@ -1,12 +1,11 @@
 <template>
   <header>
-   <div class="container">       
-
-    <MenuBtn />
-    
-    <MainMenu />
-
-   
+   <div class="container">    
+      <nav>              
+        <a href="#portfolio">Portfolio</a>        
+        <a href="#sobre">Sobre</a>        
+        <a href="#contato">Contato</a>
+      </nav>
    </div>
    <div class="progress-container">
     <div class="progress-bar" id="myBar"></div>
@@ -16,14 +15,12 @@
 
 <script>
 
-import MenuBtn from "@/components/MenuBtn.vue";
-import MainMenu from "@/components/MainMenu.vue";
-
 export default {
   name: "TheHeader",
-  components: {
-    MenuBtn,
-    MainMenu    
+  data(){
+    return{
+     
+    }
  },
 methods:{
   progressBar() {
@@ -58,7 +55,30 @@ header {
     
       @media(orientation:portrait){
         justify-content: center;
-      }    
+      }
+
+    nav{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media(orientation:portrait){
+        //display: none;
+      }
+      a{
+        padding: 15px;
+        display: inline-block;
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: 700; 
+        color: #fff;   
+        transition: all .3s;
+        
+        &:hover{
+          color: $azul-claro;
+        }
+      }
+    }  
   }
   .progress-container {
     width: 100%;

@@ -55,7 +55,6 @@ export default {
   padding: 100px 0; 
   background: $azul-petroleo;
 
-
   .title{
     width: 100%;      
     margin-bottom: 50px !important;

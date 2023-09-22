@@ -23,7 +23,7 @@
 
 <script>
 
-//import axios from "axios";
+import axios from "axios";
 
 export default {  
   components: {
@@ -31,21 +31,21 @@ export default {
   },
   data(){
     return{
-      /*body: null,
-      logos: null*/
+      body: null,
+      logos: null
     }
  },
  methods: {
- /* getTecnologias(){
+  getTecnologias(){
     axios.get('https://eliel.dev/admin/web/api/pagina/43').then(response => {      
       this.title = response.data[0].title;
       this.body = response.data[0].body;      
       this.logos = response.data[0].field_imagens.split(",");      
     });
-  }*/
+  }
  },
  created(){
-  //this.getTecnologias();
+  this.getTecnologias();
  }
 }
 </script>
@@ -54,8 +54,14 @@ export default {
 #top{
   padding: 25vh 0;
   margin-bottom: 25px;
+<<<<<<< HEAD
   background: #1b1940 url(../assets/footer-2.jpg) left top no-repeat;
   background-size: cover;
+=======
+  background: $azul-petroleo;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  //border-bottom: 50px solid $azul-claro;
+>>>>>>> parent of ff1207a (menu mobile)
 
   @media(orientation:portrait){
     padding: 170px 7% 0 7%;
