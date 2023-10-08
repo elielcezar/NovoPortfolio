@@ -1,5 +1,1 @@
-//import $ from 'jQuery' //import jQuery 
-
-export function randomId() { 
-    console.log('sdçfjhsdlkjfhsalkdjh');
-}
+//import $ from 'jQuery' //import jQuery

@@ -4,7 +4,7 @@
 
         <div class="title" data-aos="fade-right">
             <h3>Clientes</h3>
-            <span>Parceiros</span>
+            <span>Para quem trabalhei</span>
         </div> 
 
         <div class="row">

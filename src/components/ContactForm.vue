@@ -14,7 +14,7 @@
         </div>
         <div class="col-2">
           <div v-if="errors" class="erros">
-            <p><strong>Por favor corrija os seguintes erros:</strong> </p>
+            <p><strong>Por favor corrija o seguinte:</strong> </p>
             <ul>
               <li v-for="error in errors" :key="error">{{ error }}</li>
             </ul>
@@ -120,6 +120,12 @@ export default{
   .container{
     max-width: 900px;
   }
+
+  .title{
+    @media(orientation:portrait){
+           margin: 0 0 40px 0;
+      }
+  }
   
 .row{
   display: flex;
@@ -161,6 +167,14 @@ export default{
     } 
     p.convite{
       margin: 0 0 40px 0; 
+
+      @media(orientation:landscape){
+        max-width: 300px;
+      }
+      @media(orientation:portrait){
+        text-align: center;
+        margin: 0 7% 40px 7%;
+      }
     }
  
   }
