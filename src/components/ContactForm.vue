@@ -14,7 +14,7 @@
         </div>
         <div class="col-2">
           <div v-if="errors" class="erros">
-            <p><strong>Por favor corrija o seguinte:</strong> </p>
+            <p><strong>Por favor corrija o seguinte -></strong> </p>
             <ul>
               <li v-for="error in errors" :key="error">{{ error }}</li>
             </ul>
@@ -33,7 +33,7 @@
 
             <div v-if="loading" class="form-item">
               <div class="loading">
-                <span>Enviando ...</span>
+                <span>Enviando -> ...</span>
                 <img src="@/assets/loading.gif" alt="">
               </div>           
             </div>
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import axios from "axios";
+//import axios from "axios";
 
 export default{
     name: 'ContactForm',
@@ -75,25 +75,26 @@ export default{
     },
     methods: {
         handleSubmit(){
-
-            const dados = {
-                webform_id: "contact",
-                name: this.name,
-                email: this.email,
-                subject: "Contato pelo site",
-                message: this.message
+            const options = {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': 'Q_gNEmRFgcKzMc8b_Meqp4ATFS8VRbgPoezUAmcabPk'
+              },              
+              body: '{"webform_id":"contact","name":"'+this.name+'","email":"'+this.email+'","message":"'+this.message+'"}'
             };
+
             if(this.name && this.email && this.message){
               this.loading = true;
-              console.log('loading...');
-              axios.post('https://eliel.dev/admin/web/webform_rest/submit?api-key=22e4270419275992f36377939ac2e113', dados).then( res => {                
-                console.log(res);                
-                this.errors = false;                
-                this.loading = false;                
-                this.savingSuccessful = true;
-              }).catch( err => {
-                  console.log(err);                
-              });  
+              fetch('https://eliel.dev/admin/web/webform_rest/submit?api-key=22e4270419275992f36377939ac2e113', options)
+              .then(response => response.json())
+              .then(response => console.log(response))
+              .catch(err => console.error(err));
+              
+              this.errors = false;                
+              this.loading = false;                
+              this.savingSuccessful = true;
+                           
             }else{        
               this.errors = [];      
               if(!this.name){                
@@ -119,12 +120,6 @@ export default{
 
   .container{
     max-width: 900px;
-  }
-
-  .title{
-    @media(orientation:portrait){
-           margin: 0 0 40px 0;
-      }
   }
   
 .row{
@@ -167,14 +162,6 @@ export default{
     } 
     p.convite{
       margin: 0 0 40px 0; 
-
-      @media(orientation:landscape){
-        max-width: 300px;
-      }
-      @media(orientation:portrait){
-        text-align: center;
-        margin: 0 7% 40px 7%;
-      }
     }
  
   }
