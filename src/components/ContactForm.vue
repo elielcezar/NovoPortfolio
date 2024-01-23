@@ -79,14 +79,14 @@ export default{
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-                'X-CSRF-Token': 'Q_gNEmRFgcKzMc8b_Meqp4ATFS8VRbgPoezUAmcabPk'
+                'X-CSRF-Token': 'Q_gNEmRFgcKzMc8b_Meqp4ATFS8VRbgPoezUAmcabPk'                
               },              
               body: '{"webform_id":"contact","name":"'+this.name+'","email":"'+this.email+'","message":"'+this.message+'"}'
             };
 
             if(this.name && this.email && this.message){
               this.loading = true;
-              fetch('https://eliel.dev/admin/web/webform_rest/submit?api-key=22e4270419275992f36377939ac2e113', options)
+              fetch('http://localhost:8080/admin/web/webform_rest/submit?api-key=22e4270419275992f36377939ac2e113', options)
               .then(response => response.json())
               .then(response => console.log(response))
               .catch(err => console.error(err));

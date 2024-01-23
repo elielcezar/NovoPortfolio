@@ -1,7 +1,9 @@
 const { defineConfig } = require('@vue/cli-service');
 module.exports = defineConfig({
   transpileDependencies: true,
-  //publicPath: process.env.NODE_ENV === 'production' ? '/novo/' : '/',
+  devServer: {         
+    proxy: "https://eliel.dev/"    
+  },  
   css: {
     loaderOptions: {
         sass: {
@@ -12,4 +14,5 @@ module.exports = defineConfig({
         }
     }
   }
+  //publicPath: process.env.NODE_ENV === 'production' ? '/novo/' : '/',
 });

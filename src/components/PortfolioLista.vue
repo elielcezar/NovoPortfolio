@@ -40,7 +40,7 @@ export default {
     /*api.get("/portfolios").then(response => {      
       this.portfolios = response.data;
     });*/
-    axios.get('https://eliel.dev/admin/web/api/portfolios').then(response => {      
+    axios.get('http://localhost:8080/admin/web/api/portfolios').then(response => {      
       this.portfolios = response.data;
     });
   }  

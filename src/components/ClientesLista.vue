@@ -41,7 +41,7 @@ export default {
  },
  methods: {
   getClientes(){
-    axios.get('https://eliel.dev/admin/web/api/pagina/44').then(response => {      
+    axios.get('http://localhost:8080/admin/web/api/pagina/44').then(response => {      
       this.title = response.data[0].title;
       this.body = response.data[0].body;
       this.logos = response.data[0].field_imagens.split(",");
